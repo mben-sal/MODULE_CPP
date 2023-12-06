@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 20:02:02 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/03 12:26:53 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/06 19:50:53 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void Weapon::setType(std::string type)
 {
 	this->_type = type;
 }
-const std::string &Weapon::getType(void)
+const std::string &Weapon::getType(void) 
 {
 	return(_type);
 }

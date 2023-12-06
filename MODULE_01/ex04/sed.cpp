@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:31:08 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/03 12:39:36 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/06 20:17:27 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void sed::replace(std::string const s2, std::string const s3)
         j = 0;
         while ((j = ligne.find(s2, j)) != std::string::npos)
         {
-            ligne.replace(j, s2.length(), s3); // Remplacer s2 par s3 dans la ligne
+            // ligne.replace(j, s2.length(), s3); // Remplacer s2 par s3 dans la ligne
             j += s3.length(); // Avancer j pour éviter de rester bloqué dans une boucle infinie
         }
         out << ligne << std::endl; // Écrire la ligne modifiée dans le fichier de sortie

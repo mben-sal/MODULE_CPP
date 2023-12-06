@@ -6,14 +6,13 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 20:03:12 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/04 18:06:58 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:15:30 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Zombie.hpp"
 
-Zombie* newZombie(std::string name);
-void randomChump(std::string name);
+
 void destroy(Zombie *zombie)
 {
 	delete(zombie);

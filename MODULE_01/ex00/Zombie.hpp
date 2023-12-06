@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 20:03:16 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/03 12:15:48 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/06 18:15:37 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ public:
 	Zombie(std::string _name);
 	~Zombie();
 	void annonce();
+	
 };
-
+Zombie* newZombie(std::string name);
+void randomChump(std::string name);
 #endif
