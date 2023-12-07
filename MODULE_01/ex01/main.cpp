@@ -17,7 +17,7 @@ int main()
 	Zombie *Zombie_;
 	int N = 0;
 	int i;
-	
+
 	i = 0;
 	std::cout << "Please enter the size of your horde zombies: " << std::endl;
 	std::cin >> N;
@@ -25,7 +25,7 @@ int main()
 		return(0);
 	if (N <= 0)
 		return 0;
-	Zombie_ = zombieHorde( N,"zombie");
+	Zombie_ = zombieHorde(N,"zombie");
 	while(i < N)
 	{
 		Zombie_[i].annonce();

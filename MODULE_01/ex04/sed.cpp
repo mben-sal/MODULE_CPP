@@ -20,19 +20,16 @@ sed::sed(std::string filename): infile(filename)
 sed::~sed()
 {
 }
-
 void sed::replace(std::string const s2, std::string const s3)
 {
     std::ifstream in(this->infile); // Ouvrir le fichier d'entrée
-    std::ofstream out(this->outfile); // Créer le fichier de sortie
-
 
     if (!in)
     {
         std::cout << "Failed to open input file: " << this->infile << std::endl;
-        return; // Sortir de la fonction en cas d'échec
+        return ; // Sortir de la fonction en cas d'échec
     }
-
+    std::ofstream out(this->outfile); // Créer le fichier de sortie
     if (!out)
     {
         std::cout << "Failed to create output file: " << this->outfile << ".replace" << std::endl;
@@ -45,12 +42,22 @@ void sed::replace(std::string const s2, std::string const s3)
     while (std::getline(in, ligne)) // Lire chaque ligne du fichier d'entrée
     {
         j = 0;
+		// size_t k = 0;
+        std::string modligne; // Pour stocker la ligne modifiée
+
         while ((j = ligne.find(s2, j)) != std::string::npos)
         {
-            // ligne.replace(j, s2.length(), s3); // Remplacer s2 par s3 dans la ligne
-            j += s3.length(); // Avancer j pour éviter de rester bloqué dans une boucle infinie
+            // Partie avant l'occurrence
+            modligne += ligne.substr(0, j);
+            // Sous-chaîne à insérer à la place
+            modligne += s3;
+            // Mise à jour de la position pour éviter une boucle infinie
+            // Partie après l'occurrence
+            ligne = ligne.substr(j + s2.length());
         }
-        out << ligne << std::endl; // Écrire la ligne modifiée dans le fichier de sortie
+        // Ajouter le reste de la ligne après la dernière occurrence
+        modligne += ligne;
+        out << modligne << std::endl; // Écrire la ligne modifiée dans le fichier de sortie
     }
 
     in.close(); // Fermer le fichier d'entrée

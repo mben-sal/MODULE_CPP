@@ -29,7 +29,7 @@ public:
 	void annonce();
 	void set_name(std::string name);
 };
-	Zombie* zombieHorde( int N, std::string name );
-	void destroy(Zombie *zombie);
+Zombie* zombieHorde( int N, std::string name);
+void destroy(Zombie *zombie);
 
 #endif
