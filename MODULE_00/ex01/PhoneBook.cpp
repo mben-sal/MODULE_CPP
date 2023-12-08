@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/01 14:05:19 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/02 17:10:04 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/08 20:01:24 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,7 @@ int	PhoneBook::add(int i , int count)
 
 void PhoneBook::printf_tableau()
 {
-std::cout   << "|--------------Contact Display------------------------------------|\n"
-            << "|-----------------------------------------------------------------|\n"
-	        << "|    INDEX|First name|  Last Name|    Phone|   Nickname|  darkname|\n"
-	        << "|-----------------------------------------------------------------|\n";
+std::cout << "successfully ✅" << std::endl;
 }
 void info_data(std::string info)
 {
@@ -169,21 +166,19 @@ void PhoneBook::search(PhoneBook PhoneBook, int count)
 	}
 	else if(nbr >= 0 && nbr < count)
 	{
-		PhoneBook.printf_tableau();
-		std::cout << "|        " << nbr << "|";
 		first = _Contact[nbr].get_firstname();
-		info_data(first);
+		std::cout << "First name : " << first << std::endl;
 		last = _Contact[nbr].get_lastname();
-		info_data(last);
+		std::cout << "Last Name  : " << last << std::endl;
 		nick = _Contact[nbr].get_Nickname();
-		info_data(nick);
+		std::cout << "Nick name  : " << nick << std::endl;
 		phone = _Contact[nbr].get_Phonename();
-		info_data(phone);
+		std::cout << "Phone      : " <<  phone << std::endl;
 		dark = _Contact[nbr].get_darkname();
-		info_data(dark);
-		std::cout << std::endl;
-		std::cout << "|-----------------------------------------------------------------|"<< std::endl;
+		std::cout << "dark name  : " << dark << std::endl;
+		PhoneBook.printf_tableau();
 	}
+
 }
 
 int main (int ac , char **av)
