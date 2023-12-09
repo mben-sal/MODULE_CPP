@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 20:54:41 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/06 19:56:16 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/09 16:30:57 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ void HumanB::attack()
 {
 	if (weapon)
 		std::cout << name << "attack with the " << weapon->getType() << std::endl;
+	else
+		std::cout << "Can not attack: No weapon" << std::endl;
 }
 HumanB::~HumanB()
 {

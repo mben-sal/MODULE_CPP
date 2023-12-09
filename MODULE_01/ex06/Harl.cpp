@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 18:50:39 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/06 20:29:10 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/09 15:50:45 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,10 @@ void Harl::complain(std::string lvl)
 	{
 	case 0:
 		Harl::debug();
-		// break;
 	case 1:
 		Harl::info();
-		// break;
 	case 2:
 		Harl::warning();
-		// break;
 	case 3:
 		Harl::error();
 		break;

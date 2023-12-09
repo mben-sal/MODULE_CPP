@@ -1,5 +1,6 @@
 # MODULE_CPP
 
 pointeur et reference 
-ex04 : HumanB may not always have a Weapon, whereas HumanA will always be armed.
+Alors que HumanA prend l'arme dans son constructeur, HumanB ne le fait pas.
+• HumanB n'a pas toujours d'arme, alors que HumanA sera toujours armé
 new et delete 

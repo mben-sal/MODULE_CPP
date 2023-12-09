@@ -6,7 +6,7 @@
 #    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 20:02:36 by mben-sal          #+#    #+#              #
-#    Updated: 2023/10/14 16:41:51 by mben-sal         ###   ########.fr        #
+#    Updated: 2023/12/09 12:36:26 by mben-sal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 HEADER = ./Zombie.hpp
 
 SRC = newZombie.cpp\
-	  zombie.cpp\
+	  Zombie.cpp\
 	  main.cpp\
 	  randomChump.cpp
 

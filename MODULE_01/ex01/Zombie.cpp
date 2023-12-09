@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 16:42:53 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/14 17:54:33 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/09 12:22:18 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void Zombie::annonce()
 	std::cout << this->_name<< " : BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void destroy(Zombie *zombie, std::string name)
-{
-	std::cout << name << " : Destroyed" << std::endl;
-	delete(zombie);
-}
+// void destroy(Zombie *zombie, std::string name)
+// {
+// 	std::cout << name << " : Destroyed" << std::endl;
+// 	delete(zombie);
+// }
 
 Zombie::Zombie()
 {
@@ -37,5 +37,5 @@ Zombie::Zombie()
 
 Zombie::~Zombie()
 {
-		std::cout << _name << " : Destroyed" << std::endl;
+	std::cout << _name << " : Destroyed" << std::endl;
 }

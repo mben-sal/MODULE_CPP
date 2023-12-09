@@ -6,7 +6,7 @@
 #    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/16 15:16:45 by mben-sal          #+#    #+#              #
-#    Updated: 2023/10/16 15:21:55 by mben-sal         ###   ########.fr        #
+#    Updated: 2023/12/09 16:42:27 by mben-sal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ $(NAME) : $(OBJ) $(HEADER)
 	@echo "compilation done"
 
 clean :
-	@rm -f $(OBJ)
+	@rm -f $(OBJ) *.replace
 	@echo "clean done"
 
 fclean :clean

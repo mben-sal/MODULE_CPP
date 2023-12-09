@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:43:57 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/06 20:22:26 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/09 15:54:54 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void Harl::error()
 void Harl::complain(std::string lvl)
 {
 	int i;
-	std::string complains [4] = {"DEBUG", "ERROR", "INFO", "WARNING"};
+	std::string complains [4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void (Harl::*fonction[4])();
 	
 	i = 0;
@@ -47,9 +47,9 @@ void Harl::complain(std::string lvl)
 		if(lvl == complains[i])
 		{
 			(this->*fonction[i])();
-			break;
+			return ;
 		}
 		i++;
 	}
-	// std::cerr << "The input you wrote is sadly didn't match the complain list!!" << std::endl;
+	std::cerr << "The input you wrote is sadly didn't match the complain list!!" << std::endl;
 }
