@@ -6,23 +6,23 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 18:24:05 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/22 18:43:11 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/19 19:43:23 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Fixed.hpp"
-
-Class_Fixed::Class_Fixed(/* args */)
+const int Fixed::r = 8;
+Fixed::Fixed(/* args */)
 {
 	this->point = 0;
 }
 
-Class_Fixed::Class_Fixed(const Class_Fixed& b)
+Fixed::Fixed(const Fixed& b)
 {
 	*this = b;
 }
 //*********
-Class_Fixed &Class_Fixed::operator=(const Class_Fixed& a)
+Fixed &Fixed::operator=(const Fixed& a)
 {
 	if(this == &a)
 		return *this;
@@ -30,148 +30,163 @@ Class_Fixed &Class_Fixed::operator=(const Class_Fixed& a)
 	return(*this);
 }
 //*** Cette surcharge de l'opérateur d'assignation est utilisée pour copier les données d'un objet Fixed dans un autre objet de la même classe
-std::ostream &operator<< (std::ostream &a, const Class_Fixed &b)
+std::ostream &operator<< (std::ostream &a, const Fixed &b)
 {
 	a << b.toFloat();
 	return(a);
 }
-int Class_Fixed::toInt(void) const
+int Fixed::toInt(void) const
 {
 	return ((int)this->point >> this->r);
 }
 
-float Class_Fixed::toFloat(void) const
+float Fixed::toFloat(void) const
 {
 	return ((float)this->point / (1 << this->r));
 }
-void Class_Fixed::setRawBits(int const r)
+void Fixed::setRawBits(int const r)
 {
 	this->point = r;
 }
-int Class_Fixed::getRawBits(void)const
+int Fixed::getRawBits(void)const
 {
 	return(this->point);
 }
-Class_Fixed::~Class_Fixed()
+Fixed::~Fixed()
 {
 }
-Class_Fixed::Class_Fixed(const int q)
+Fixed::Fixed(const int q)
 {
-	this->point = q* (1 << this->r);
+	this->point = q * (1 << this->r);
 }
 
-Class_Fixed::Class_Fixed( const float b)
+Fixed::Fixed( const float b)
 {	
 	this->point = b * (1 << this->r);
 }
-Class_Fixed Class_Fixed::operator+ (const Class_Fixed a)
+Fixed Fixed::operator+(const Fixed a)
 {
-	Class_Fixed b;
+	Fixed b;
 
-	b.setRawBits((this->point + a.point) >> this->point);
+	b.setRawBits(this->point + a.point);
 	return(b);
 }
-Class_Fixed Class_Fixed::operator-(const Class_Fixed a)
+Fixed Fixed::operator-(const Fixed a)
 {
-	Class_Fixed b;
+	Fixed b;
 
-	b.setRawBits((this->point - a.point) >> this->point);
-	return(b);
-}
-
-Class_Fixed Class_Fixed::operator*(const Class_Fixed a)
-{
-	Class_Fixed b;
-
-	b.setRawBits((this->point * a.point) >> this->point);
+	b.setRawBits(this->point - a.point);
 	return(b);
 }
 
-Class_Fixed Class_Fixed::operator/ (const Class_Fixed a)
+Fixed Fixed::operator*(const Fixed a)
 {
-	Class_Fixed b;
-	
-	b.setRawBits((this->point / a.point) >> this->point);
+	Fixed b(this->toFloat() * a.toFloat());
 	return(b);
 }
 
-bool Class_Fixed::operator!= (const Class_Fixed a)
+Fixed Fixed::operator/ (const Fixed a)
+{
+	Fixed b(this->toFloat() / a.toFloat());
+	return(b);
+}
+
+bool Fixed::operator!= (const Fixed a)
 {
 	if(this->point != a.point)
 		return true;
 	return false;
 }
 
-bool Class_Fixed::operator== (const Class_Fixed a)
+bool Fixed::operator== (const Fixed a)
 {
 	if(this->point == a.point)
 		return true;
 	return false;
 }
 
-bool Class_Fixed::operator< (const Class_Fixed a)
+bool Fixed::operator< (const Fixed a)
 {
 	if(this->point < a.point)
 		return true;
 	return false;
 }
-
-bool Class_Fixed::operator<= (const Class_Fixed a)
+bool Fixed::operator> (const Fixed a)
 {
-	if(this->point < a.point || this->point == a.point)
+	if(this->point > a.point)
 		return true;
 	return false;
 }
 
-bool Class_Fixed::operator>= (const Class_Fixed a)
+bool Fixed::operator<= (const Fixed a)
 {
-	if(this->point > a.point || this->point == a.point)
+	if(this->point <= a.point)
 		return true;
 	return false;
 }
 
-Class_Fixed Class_Fixed::operator-- (int)
+bool Fixed::operator>= (const Fixed a)
 {
-	Class_Fixed b;
+	if(this->point >= a.point)
+		return true;
+	return false;
+}
+
+Fixed Fixed::operator-- (int)
+{
+	Fixed b;
 	
 	b.point = point--;
 	return(b);
 }
 
-Class_Fixed Class_Fixed::operator++ (int)
+Fixed Fixed::operator++ (int)
 {
-	Class_Fixed b;
+	Fixed b;
 
 	b.point = point++;
 	return(b);
 }
 
-Class_Fixed Class_Fixed::operator-- ()
+Fixed Fixed::operator-- ()
 {
-	Class_Fixed b;
+	Fixed b;
 	
 	b.point = --point;
 	return(b);
 }
 
-Class_Fixed Class_Fixed::operator++ ()
+Fixed Fixed::operator++ ()
 {
-	Class_Fixed b;
+	Fixed b;
 
 	b.point = ++point;
 	return(b);
 }
 
-const Class_Fixed &Class_Fixed::max(const Class_Fixed &a, const Class_Fixed &b)
+const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
 	if(a.point <= b.point)
 		return(a);
 	return(b);
 }
 
-const Class_Fixed &Class_Fixed::min(const Class_Fixed &a, const Class_Fixed &b)
+const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
 {
 	if(a.point >= b.point)
+		return(a);
+	return(b);
+}
+
+const Fixed &Fixed::min(Fixed &a,  Fixed &b)
+{
+	if(a >= b)
+		return(a);
+	return(b);
+}
+const Fixed &Fixed::max(Fixed &a,  Fixed &b)
+{
+	if( a <= b)
 		return(a);
 	return(b);
 }

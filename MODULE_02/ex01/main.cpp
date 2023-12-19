@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 14:22:05 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/21 17:43:03 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/18 21:16:13 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ int main( void )
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	// Fixed a(1);
+	// a.setRawBits(2);
+	// std::cout << a.toFloat() << std::endl;
 return 0;
 }

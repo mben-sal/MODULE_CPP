@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 18:24:09 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/22 18:09:58 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/19 19:43:29 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,40 +17,42 @@
 #include <iostream>
 #include <cmath>
 
-class Class_Fixed
+class Fixed
 {
 private:
-	static const int r = 8;
+	static const int r;
 	int point;
 public:
-	Class_Fixed();
-	Class_Fixed(const Class_Fixed &autre);
-	Class_Fixed(const int a);
-	Class_Fixed(const float b);
+	Fixed();
+	Fixed(const Fixed &autre);
+	Fixed(const int a);
+	Fixed(const float b);
 	int toInt(void) const;
 	float toFloat(void) const;
 	
 	void setRawBits(int const r);
 	int getRawBits(void) const;
-	~Class_Fixed();
-	Class_Fixed& operator= (const Class_Fixed& a);
-	Class_Fixed operator+ (const Class_Fixed a);
-	Class_Fixed operator- (const Class_Fixed a);
-	Class_Fixed operator/ (const Class_Fixed a);
-	Class_Fixed operator* (const Class_Fixed a);
-	bool operator!= (const Class_Fixed a);
-	bool operator== (const Class_Fixed a);
-	bool operator<= (const Class_Fixed a);
-	bool operator>= (const Class_Fixed a);
-	bool operator> (const Class_Fixed a);
-	bool operator< (const Class_Fixed a);
-	Class_Fixed	operator++ (int);
-	Class_Fixed	operator-- (int);
-	Class_Fixed	operator++ ();
-	Class_Fixed	operator-- ();
-	static Class_Fixed const &max(const Class_Fixed &a, const Class_Fixed &b);
-	static Class_Fixed const &min(const Class_Fixed &a, const Class_Fixed &b);
+	~Fixed();
+	Fixed& operator= (const Fixed& a);
+	Fixed operator+ (const Fixed a);
+	Fixed operator- (const Fixed a);
+	Fixed operator/ (const Fixed a);
+	Fixed operator* (const Fixed a);
+	bool operator!= (const Fixed a);
+	bool operator== (const Fixed a);
+	bool operator<= (const Fixed a);
+	bool operator>= (const Fixed a);
+	bool operator> (const Fixed a);
+	bool operator< (const Fixed a);
+	Fixed	operator++ (int);
+	Fixed	operator-- (int);
+	Fixed	operator++ ();
+	Fixed	operator-- ();
+	static Fixed const &max(const Fixed &a, const Fixed &b);
+	static Fixed const &min(const Fixed &a, const Fixed &b);
+	static Fixed const &min(Fixed &a,  Fixed &b);
+	static Fixed const &max(Fixed &a,  Fixed &b);
 };
-std::ostream & operator << (std::ostream &a, const Class_Fixed &b);
+std::ostream & operator << (std::ostream &a, const Fixed &b);
 
 #endif

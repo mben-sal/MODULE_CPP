@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 14:22:01 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/21 17:40:27 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/19 19:42:48 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 class Fixed
 {
 private:
-	static const int r = 8;
+	static const int r;
 	int point;
 public:
 	Fixed();
@@ -34,6 +34,6 @@ public:
 	void setRawBits(int const r);
 	int getRawBits(void) const;
 };
-std::ostream & operator << (std::ostream &p, const Fixed &f);
+	std::ostream & operator <<(std::ostream &p, const Fixed &f);
 
 #endif

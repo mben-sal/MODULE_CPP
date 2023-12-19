@@ -6,32 +6,31 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/20 20:10:16 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/21 17:21:04 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/19 18:37:17 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"fixed.hpp"
+const int fixed::r = 8;
 
-fixed::fixed(/* args */)
+fixed::fixed()
 {
 	std::cout << "Default constructor called" << std::endl;
 	this->point = 0;
 }
 
-fixed::fixed(const fixed& b)
+fixed::fixed(const fixed& a)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	*this = b;
+	*this = a;
 }
-//*********
+
 fixed &fixed::operator=(const fixed& a)
 {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->point = a.getRawBits();
 	return(*this);
 }
-//*** Cette surcharge de l'opérateur d'assignation est utilisée pour copier les données d'un objet Fixed dans un autre objet de la même classe
-
 void fixed::setRawBits(int const r)
 {
 	this->point = r;

@@ -6,12 +6,12 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 14:21:56 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/21 18:01:49 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/19 19:42:43 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Fixed.hpp"
-
+const int Fixed::r = 8;
 
 Fixed::Fixed(/* args */)
 {
@@ -68,18 +68,18 @@ float Fixed::toFloat(void)const
 Fixed::Fixed(const int q)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->point = (int)(round)(q * 256);
+	this->point = q * 256  ;
 }
 
 Fixed::Fixed(const float b)
 {
 	std::cout << "float constructor called"<< std::endl;
 	
-	this->point = (int)(round)(b * 256);
+	this->point = roundf(b * 256);
 }
 
 std::ostream &operator<< (std::ostream &p, const Fixed &f)
 {
 	p << f.toFloat();
-	return(p); 
+	return(p);
 }

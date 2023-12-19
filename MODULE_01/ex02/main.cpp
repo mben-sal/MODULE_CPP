@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 18:21:02 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/09 16:52:18 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/10 16:28:54 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,4 @@ int main()
 	std::cout << str << std::endl;
 	std::cout << *stringPTR << std::endl;
 	std::cout << stringREF << std::endl;
-	
 }
