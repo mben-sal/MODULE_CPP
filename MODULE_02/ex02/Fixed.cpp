@@ -6,12 +6,13 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 18:24:05 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/19 19:43:23 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/21 20:07:03 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Fixed.hpp"
 const int Fixed::r = 8;
+
 Fixed::Fixed(/* args */)
 {
 	this->point = 0;
@@ -21,7 +22,7 @@ Fixed::Fixed(const Fixed& b)
 {
 	*this = b;
 }
-//*********
+
 Fixed &Fixed::operator=(const Fixed& a)
 {
 	if(this == &a)
@@ -29,7 +30,7 @@ Fixed &Fixed::operator=(const Fixed& a)
 	this->point = a.getRawBits();
 	return(*this);
 }
-//*** Cette surcharge de l'opérateur d'assignation est utilisée pour copier les données d'un objet Fixed dans un autre objet de la même classe
+
 std::ostream &operator<< (std::ostream &a, const Fixed &b)
 {
 	a << b.toFloat();
@@ -57,12 +58,12 @@ Fixed::~Fixed()
 }
 Fixed::Fixed(const int q)
 {
-	this->point = q * (1 << this->r);
+	this->point = q << this->r;
 }
 
 Fixed::Fixed( const float b)
 {	
-	this->point = b * (1 << this->r);
+	this->point = roundf(b * (1 << this->r));
 }
 Fixed Fixed::operator+(const Fixed a)
 {
@@ -166,7 +167,7 @@ Fixed Fixed::operator++ ()
 
 const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 {
-	if(a.point <= b.point)
+	if(a.point >= b.point)
 		return(a);
 	return(b);
 }

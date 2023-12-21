@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/21 14:21:56 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/19 19:42:43 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/21 19:54:37 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void Fixed::setRawBits(int const r)
 }
 int Fixed::getRawBits(void)const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	// std::cout << "getRawBits member function called" << std::endl;
 	return(this->point);
 }
 Fixed::~Fixed()
@@ -60,7 +60,7 @@ int Fixed::toInt(void) const
 float Fixed::toFloat(void)const
 {
 	float d;
-	
+
 	d = this->point / 256.0000000;
 	return(d);
 }
@@ -68,7 +68,7 @@ float Fixed::toFloat(void)const
 Fixed::Fixed(const int q)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->point = q * 256  ;
+	this->point = q * 256;
 }
 
 Fixed::Fixed(const float b)
