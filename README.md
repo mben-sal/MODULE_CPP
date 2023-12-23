@@ -127,4 +127,42 @@ Exemple de déclaration d'une variable de type double :
 
 En résumé, float et double sont des types de données à virgule flottante en C++, et leur choix dépend des besoins spécifiques en termes de précision et d'utilisation de la mémoire.
 
+* static const int r; déclare une variable entière constante qui appartient à la portée de fichier et dont la valeur ne peut pas être modifiée après son initialisation. 
+
+# Préfixe (++i, --i) :
+
+L'opération d'incrémentation ou de décrémentation est effectuée avant l'évaluation de l'expression qui contient la variable.
+La variable est incrémentée ou décrémentée, puis la nouvelle valeur est utilisée dans l'expression.
+
+int a = 5;
+int b = ++a;  // b prend la valeur de a après son incrémentation
+// Maintenant, a et b sont tous deux égaux à 6
+
+# Postfix (i++, i--) :
+
+L'opération d'incrémentation ou de décrémentation est effectuée après l'évaluation de l'expression qui contient la variable.
+La variable est utilisée dans l'expression telle quelle, puis elle est incrémentée ou décrémentée.
+
+int a = 5;
+int b = a++;  // b prend la valeur actuelle de a, puis a est incrémenté
+// Maintenant, a est égal à 6 et b est égal à 5
+
+*****************************************************MODULE_03***********************************************************************
+
+# inheritance :
+
+is the process of creating the new classes , called derived classe , from existing or base classes
+
+**La syntaxe de base pour définir une classe dérivée en C++ est la suivante**
+class ClasseDeBase {
+    // membres et fonctions de la classe de base
+};
+
+class ClasseDerivee : public ClasseDeBase {
+    // membres et fonctions de la classe dérivée
+};
+
+en cas de public signifie que tous les membres de la classe Base passe public et protected et private ;
+en cas de protected signifie que tous les membres de la classe Base passe protecred et protected et private;
+an cas de private signifie que tous les membres de la classe Base passe private et private et private;
 
