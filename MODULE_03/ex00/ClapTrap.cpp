@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:13:10 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/23 17:58:56 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/24 16:55:24 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap &a)
 {
+	std::cout << "ClapTrap copy constructor called" << std::endl;
 	name_point = a.name_point;
 	hit_point = a.hit_point;
 	energy_point = a.energy_point;
@@ -38,14 +39,15 @@ ClapTrap::ClapTrap(const ClapTrap &a)
 ClapTrap& ClapTrap::operator= (const ClapTrap &a)
 {
 	std::cout << "ClapTrap assignation operator called" << std::endl;
-
+	if (this != &a)
+	{
 		this->name_point = a.name_point;
 		this->hit_point = a.hit_point;
 		this->energy_point = a.energy_point;
 		this->attack_point = a.attack_point;
-		return(*this);
+	}
+	return(*this);
 }
-
 void ClapTrap::attack(const std::string &targit)
 {
 	if(energy_point <= 0 || hit_point <= 0)

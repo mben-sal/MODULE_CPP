@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 21:04:36 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/27 10:03:58 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/24 17:10:15 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class FragTrap : public ClapTrap
 		FragTrap();
 		~FragTrap();
 		FragTrap& operator= (const FragTrap &a);
-		void highFive();
+		void highFivesGuys();
 		void attack(const std::string &tragit);
 };
 

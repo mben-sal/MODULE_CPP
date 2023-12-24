@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 21:03:49 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/26 21:03:53 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/24 17:07:29 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,16 +34,17 @@ ClapTrap::ClapTrap(const ClapTrap &a)
 	energy_point = a.energy_point;
 	attack_point = a.attack_point;
 }
-
 ClapTrap& ClapTrap::operator= (const ClapTrap &a)
 {
 	std::cout << "ClapTrap assignation operator called" << std::endl;
-
+	if (this != &a)
+	{
 		this->name_point = a.name_point;
 		this->hit_point = a.hit_point;
 		this->energy_point = a.energy_point;
 		this->attack_point = a.attack_point;
-		return(*this);
+	}
+	return(*this);
 }
 
 void ClapTrap::attack(const std::string &targit)

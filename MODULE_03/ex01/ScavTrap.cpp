@@ -6,13 +6,13 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 13:18:22 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/26 20:44:44 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/24 17:03:35 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"./ScavTrap.hpp"
 
-ScavTrap::ScavTrap(/* args */)
+ScavTrap::ScavTrap()
 {
 	std::cout << "Default Constructor called" << std::endl;
 }
@@ -28,11 +28,14 @@ ScavTrap::ScavTrap (std::string name) : ClapTrap(name)
 ScavTrap& ScavTrap::operator=(const ScavTrap &a)
 {
 	std::cout << "ScavTrap assignation operator called" << std::endl;
-	
-	this->name_point = a.name_point;
-	this->energy_point = a.energy_point;
-	this->hit_point = a.hit_point;
-	this->attack_point = a.attack_point;
+
+	if (this != &a)
+	{
+		this->name_point = a.name_point;
+		this->hit_point = a.hit_point;
+		this->energy_point = a.energy_point;
+		this->attack_point = a.attack_point;
+	}
 	return(*this);
 }
 
@@ -49,7 +52,10 @@ void ScavTrap::attack(const std::string &tragit)
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap is now in Gate keeper mode." << std::endl;
+	if (hit_point > 0)
+		std::cout << "ScavTrap is now in Gate keeper mode." << std::endl;
+	else
+		std::cout << "ScavTrap is not now in Gate keeper mode." << std::endl;
 }
 
 ScavTrap::~ScavTrap()

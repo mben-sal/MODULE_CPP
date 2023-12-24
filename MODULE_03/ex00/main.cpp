@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 16:13:00 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/24 21:42:34 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/24 16:52:20 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int	main()
 {
-	ClapTrap	m("manar");
+	ClapTrap	m("M");
 
 	std::cout << "\n";
 	m.attack("manar");
-	m.takedamage(80);
-	m.beRepaire(50);
+	m.takedamage(5);
+	m.beRepaire(15);
 	std::cout << "\n";
 }
