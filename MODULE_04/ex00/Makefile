@@ -6,7 +6,7 @@
 #    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/28 13:00:01 by mben-sal          #+#    #+#              #
-#    Updated: 2023/10/28 16:17:19 by mben-sal         ###   ########.fr        #
+#    Updated: 2023/12/26 15:40:42 by mben-sal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = animal
 
 CPPC = c++ 
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = Animal.hpp\
 		Cat.hpp\

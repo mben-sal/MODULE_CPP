@@ -6,13 +6,13 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 20:41:57 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/25 11:20:01 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/26 12:59:45 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Animal.hpp"
 
-Animal::Animal(/* args */)
+Animal::Animal()
 {
 	std::cout << "Animal Constructor called" << std::endl;
 	this->type = "Animal";

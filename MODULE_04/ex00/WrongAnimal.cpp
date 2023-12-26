@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 15:10:24 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/25 13:39:12 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:42:40 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ WrongAnimal::WrongAnimal(std::string type)
 
 WrongAnimal::~WrongAnimal()
 {
-	std::cout << "Animal destructor called" << std::endl;
+	std::cout << "WrongAnimal destructor called" << std::endl;
 }
 
 WrongAnimal &WrongAnimal::operator=(const WrongAnimal &a)

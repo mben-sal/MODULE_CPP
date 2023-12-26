@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 12:59:57 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/25 13:14:30 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:22:09 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int main( void )
 	// std::cout << "je suis la " << C1.get_type() << std::endl;
 	// std::cout << "je suis la " << C2.get_type() << std::endl;
 	// C1.makeSound();
+	// C2.makeSound();
 	// meta->makeSound();
     std::cout << std::endl << "------------- Wrong Animal -------------" << std::endl;
 

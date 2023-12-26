@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:06:09 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/29 16:06:13 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:20:16 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ WrongCat::WrongCat(/* args */)
 	std::cout << "WrongCat Default Constructor Called"<< std::endl;
 }
 
-// WrongCat::WrongCat(const WrongCat &a)
-// {
-// 	std::cout << "WrongCat copy constructor called" << std::endl;
-// 	*this = a;
-// }
+WrongCat::WrongCat(const WrongCat &a)
+{
+	std::cout << "WrongCat copy constructor called" << std::endl;
+	*this = a;
+}
 
 WrongCat::~WrongCat()
 {

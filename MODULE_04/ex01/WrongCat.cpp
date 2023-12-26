@@ -6,14 +6,14 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 13:38:53 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/25 14:23:50 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/26 14:00:07 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"WrongCat.hpp"
 #include"WrongAnimal.hpp"
 
-WrongCat::WrongCat(/* args */)
+WrongCat::WrongCat()
 {
 	std::cout << "WrongCat Default Constructor Called"<< std::endl;
 }

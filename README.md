@@ -166,3 +166,111 @@ en cas de public signifie que tous les membres de la classe Base passe public et
 en cas de protected signifie que tous les membres de la classe Base passe protecred et protected et private;
 an cas de private signifie que tous les membres de la classe Base passe private et private et private;
 
+**********************************************MODULE_04**************************************************
+
+Quels sont les types de polymorphisme ?
+On distingue généralement trois types de polymorphisme :
+Le polymorphisme ad hoc (également surcharge ou en anglais overloading)
+Le polymorphisme paramétrique (également généricité ou en anglais template)
+Le polymorphisme d'héritage (également redéfinition, spécialisation ou en anglais overriding)
+
+
+Polymorphisme par sous-typage (héritage)
+
+L'idée est de partir d'un type et de le modifier. Par exemple, on peut créer une classe de base, puis faire des classes dérivées. Ce concept est associé à l'approche orientée objet.
+
+
+# Classe abstraite en C++
+
+https://waytolearnx.com/2019/09/classe-abstraite-en-c.html
+
+# compilation par pointeur ;
+Animal *C1 = new Dog();
+	Animal *C2 = new Cat();
+	
+	std::cout << "je suis la " << C1->get_type() << std::endl;
+	std::cout << "je suis la " << C2->get_type() << std::endl;
+	C1->makeSound();
+	C2->makeSound();
+
+	delete C1;
+	delete C2;
+# autre methode compilation 
+
+Animal *meta;
+	
+	Cat C1;
+	Dog C2;
+	meta = &C1;
+	meta  = &C2;
+
+	std::cout << "je suis la " << C1.get_type() << std::endl;
+	std::cout << "je suis la " << C2.get_type() << std::endl;
+	C1.makeSound();
+	meta->makeSound();
+
+
+# Une fonction virtuelle:
+est une fonction membre de la classe de base que vous comptez redéfinir dans des classes dérivées.
+
+en cas base classe  en declare la fonction virtuelle comme suite petite exemple :
+
+#include <iostream>
+using namespace std;
+class base 
+{
+    
+    public :
+        virtual void print(void) 
+        {
+            cout<< "class base virtual" << endl;
+        }
+};
+
+class dirive : public base
+{
+    public :
+        void print(void)
+        {
+            cout << "class dirive " << endl;
+        }
+};
+
+int main() {
+    
+    base *m = new dirive();
+    m->print();
+    return 0;
+}
+
+# Une fonction virtuelle pure (ou fonction abstraite)
+
+est une fonction virtuelle pour laquelle nous n’avons pas d’implémentation, nous avons juste la déclaration. Une fonction virtuelle pure est déclarée en affectant 0 à la déclaration.
+
+exemple :
+
+#include <iostream>
+using namespace std;
+class base 
+{
+    
+    public :
+        virtual void print(void) = 0;
+};
+
+class dirive : public base
+{
+    public :
+        void print(void)
+        {
+            cout << "class dirive " << endl;
+        }
+};
+
+int main() {
+    
+    base *m = new dirive();
+    m->print();
+    return 0;
+}
+

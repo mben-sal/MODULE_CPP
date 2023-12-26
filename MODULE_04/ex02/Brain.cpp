@@ -6,13 +6,13 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:02:31 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/29 16:02:37 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:35:30 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"Brain.hpp"
 
-Brain::Brain(/* args */)
+Brain::Brain()
 {
 	std::cout << "Brain Constructor called" << std::endl;
 }

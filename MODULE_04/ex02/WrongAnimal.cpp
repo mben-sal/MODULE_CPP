@@ -6,14 +6,14 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 16:05:15 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/10/29 16:05:35 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:32:23 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include"WrongAnimal.hpp"
 
 
-WrongAnimal::WrongAnimal(/* args */)
+WrongAnimal::WrongAnimal()
 {
 	std::cout << "WrongAnimal Default Constructor Called\n";
 	this->_type = "WrongAnimal";

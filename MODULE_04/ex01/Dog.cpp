@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 13:11:53 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/25 15:38:24 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/26 17:43:15 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include"Brain.hpp"
 #include"Animal.hpp"
 
-Dog::Dog(/* args */)
+Dog::Dog()
 {
-	std::cout << "Cat constructor called" << std::endl;
+	std::cout << "Dog constructor called" << std::endl;
 	this->type = "Dog";
 	this->D_Brain = new Brain();
 }

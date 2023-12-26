@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/28 13:33:41 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/25 11:22:11 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/26 15:44:05 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Dog::~Dog()
 Dog &Dog::operator=(const Dog &a)
 {
 	std::cout << "Cat assignation operator called" << std::endl;
+	//if (.....)
 	this->type = a.type;
 	return(*this);
 }

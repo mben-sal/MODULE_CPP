@@ -12,19 +12,20 @@ int main( void )
 	while (i < N)
 	{
 		if (i % 2 == 0)
+		{
 			t[i] = new Dog();
-		else
+			std::cout << t[i]->get_type() << std::endl;
+			t[i]->makeSound();
+		}
+		if(i % 2 != 0)
+		{
 			t[i] = new Cat();
+			std::cout << t[i]->get_type() << std::endl;
+			t[i]->makeSound();
+		}
+		delete t[i];
 		i++;
 	}
 	
-	i = 0;
-	while (i < 2)
-	{
-		std::cout << t[i]->get_type() << std::endl;
-		t[i]->makeSound();
-    	delete t[i];
-		i++;
-	}
     return 0;
 }
