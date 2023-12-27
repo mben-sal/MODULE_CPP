@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/29 13:27:46 by mben-sal          #+#    #+#             */
-/*   Updated: 2023/12/26 17:43:37 by mben-sal         ###   ########.fr       */
+/*   Updated: 2023/12/27 14:12:26 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@
 int main( void )
 {
 	
-    Dog basic;
+    Cat basic;
     {
-        Dog tmp = basic;
+        Cat tmp = basic;
     }
 
-    const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
-    for ( int i = 0; i < 4; i++ ) {
-        delete animals[i];
-    }
+    // const Animal* animals[4] = { new Dog(), new Dog(), new Cat(), new Cat() };
+    // for ( int i = 0; i < 4; i++ ) {
+    //     delete animals[i];
+    // }
 
     return 0;
 }
