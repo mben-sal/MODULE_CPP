@@ -273,3 +273,34 @@ int main() {
     m->print();
     return 0;
 }
+
+*****************************************************MODULE_05***********************************************************************
+
+# les exception :
+
+ les exceptions sont utilisées pour gérer des erreurs et des situations exceptionnelles pendant l'exécution d'un programme
+source : https://cpp.developpez.com/faq/cpp/?page=Utilisation-des-exceptions#Comment-lever-une-exception 
+ exemple :
+
+ ``` 
+#include <iostream>
+
+  void diviser(int a, int b) {
+    if (b == 0) {
+        throw std::runtime_error("Division par zéro !");
+    }
+
+    std::cout << "Résultat de la division : " << a / b << std::endl;
+}
+
+int main() {
+    try {
+        diviser(10, 2);
+        diviser(8, 0); // Cela lancera une exception
+    } catch (const std::exception& e) {
+        std::cerr << "Erreur : " << e.what() << std::endl;
+    }
+
+    return 0;
+}
+```
