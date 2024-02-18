@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 17:38:19 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/17 10:47:53 by mben-sal         ###   ########.fr       */
+/*   Created: 2024/02/18 13:52:20 by mben-sal          #+#    #+#             */
+/*   Updated: 2024/02/18 13:52:29 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,3 @@ void Form::beSigned(Bureaucrat &b)
 	else 
 		throw (Form::GradeTooHighException());
 }
-// const std::string Form

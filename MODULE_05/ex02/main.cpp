@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 17:33:18 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/17 09:50:34 by mben-sal         ###   ########.fr       */
+/*   Created: 2024/02/17 10:31:38 by mben-sal          #+#    #+#             */
+/*   Updated: 2024/02/17 10:35:32 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,5 @@ int main()
     Form& fo = f;
     std::cout << bu << std::endl;
     std::cout <<  bu.getName() << ", bureaucrat grade " << bu.getGrade() << std::endl;
-    bu.signeForm(fo);
+    // bu.signeForm(fo);
 }

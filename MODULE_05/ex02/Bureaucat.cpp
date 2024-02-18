@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*   Bureaucat.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/10 17:35:32 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/17 08:52:12 by mben-sal         ###   ########.fr       */
+/*   Created: 2024/02/17 10:27:47 by mben-sal          #+#    #+#             */
+/*   Updated: 2024/02/17 10:35:45 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,10 +86,10 @@ std::ostream & operator<<(std::ostream &print, const Bureaucrat &n)
 	return(print);
 }
 
-void Bureaucrat::signeForm(Form &f)
-{
-	if (f.getIsSigned())
-		std::cout << this->_name << " signed " << f.getName() << std::endl;
-	else 
-		std::cout << this->_name << " couldn't sign " << f.getName() << "beacause grade is too low"<< std::endl;
-}
+// void Bureaucrat::signeForm(Form &f)
+// {
+// 	if (f.getIsSigned())
+// 		std::cout << this->_name << " signed " << f.getName() << std::endl;
+// 	else 
+// 		std::cout << this->_name << " couldn't sign " << f.getName() << "beacause grade is too low"<< std::endl;
+// }

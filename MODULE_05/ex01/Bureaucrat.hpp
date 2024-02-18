@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:35:21 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/10 17:39:29 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/02/17 08:51:52 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include "Form.hpp"
 
+class Form; 
 class Bureaucrat
 {
 private:
@@ -41,6 +42,7 @@ public:
 	{
 		const char *what() const throw();
 	};
+	void signeForm(Form& form);
 };
 std::ostream & operator << (std::ostream &print, const Bureaucrat &f);
 #endif
