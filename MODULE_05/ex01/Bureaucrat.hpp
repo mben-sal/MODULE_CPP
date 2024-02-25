@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:35:21 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/17 08:51:52 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/02/25 20:28:53 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define BUREAUCRAT_H
 
 #include <iostream>
+#include <cstdlib>   // for srand and rand
+#include <ctime>  // for time
 #include "Form.hpp"
 
 class Form; 

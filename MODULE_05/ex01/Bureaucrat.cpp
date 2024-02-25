@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:35:32 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/17 08:52:12 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/02/25 20:08:31 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 Bureaucrat::Bureaucrat() : _name("manar")
 {
 	std::cout << "Bureaucrat Default Constructor Called" << std::endl;
-	
 }
+
 Bureaucrat::Bureaucrat(const std::string name) : _name(name)
 {
 	std::cout << "Bureaucrat param Constructor Called" << std::endl;

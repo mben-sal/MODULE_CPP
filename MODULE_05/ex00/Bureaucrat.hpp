@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:18:34 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/10 17:25:48 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/02/24 16:07:00 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define BUREAUCRAT_H
 
 #include <iostream>
+#include <cstdlib>   // for srand and rand
+#include <ctime>  // for time
 class Bureaucrat
 {
 private:
