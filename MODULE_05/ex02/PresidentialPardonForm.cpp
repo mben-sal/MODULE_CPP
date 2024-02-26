@@ -6,25 +6,21 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 11:14:07 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/17 12:32:09 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/02/26 18:30:42 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() : Form("default", 0, 25, 5), targit("teste")
+PresidentialPardonForm::PresidentialPardonForm() :  Form("Default", 0, 25, 5),targit("Undifined")
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string target) : Form("PresidentialPardonForm", 0, 25, 5), targit(targit)
-{	
-}
-PresidentialPardonForm::~PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm(const std::string target) : Form("PresidentialPardon", 0, 25,5),targit(target)
 {
-	std::string << "PresidentialPardonForm destructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj): targit(obj.targit)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : targit(obj.targit)
 {
 	*this = obj;
 }
@@ -36,20 +32,25 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 	return *this;
 }
 
-PresidentialPardonForm::getTarget() const
+PresidentialPardonForm::~PresidentialPardonForm()
+{
+	std::cout << "PresidentialPardonForm destructor called" << std::endl;
+}
+
+void PresidentialPardonForm::execute(Bureaucrat const & executor) const
+{
+	if (!this->getIsSigned() && (executor.getGrade() > this->getgradeExecute()))
+		throw PresidentialPardonForm::cantexec();
+	else	
+		std::cout << targit << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+}
+
+const std::string PresidentialPardonForm::getTarget() const
 {
 	return (targit);
 }
 
-PresidentialPardonForm::execute(Bureaucrat const &execute) const
-{
-	if(!this->getIsSigned() && (execute.getGrade() > this->getgradeExecute()))
-		throw PresidentialPardonForm::cantexec();
-	else 
-		std::cout << targit <<  "has ben pardoned by zaphod Beeblebrox" << std::endl;
-}
-
 const char* PresidentialPardonForm::cantexec::what() const throw()
 {
-	return ("==> can not execute");
+	return("\033[31mCan not execute\033[0m");
 }

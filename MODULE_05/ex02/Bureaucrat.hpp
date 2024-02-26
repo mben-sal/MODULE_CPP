@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bureaucat.hpp                                      :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 10:27:20 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/17 10:27:32 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/02/26 18:18:16 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define BUREAUCRAT_H
 
 #include <iostream>
+#include <cstdlib>   // for srand and rand
+#include <ctime>  // for time
 #include "Form.hpp"
 
 class Form; 
