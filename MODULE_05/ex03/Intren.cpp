@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:25:20 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/18 16:25:36 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/02/29 20:11:36 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ Form* Intern::makeForm(const std::string FormName, const std::string targetName)
 		break;
 	case 2:
 		std::cout << "Intern creates Presidential" << std::endl;
-		return (new PresidentialPardonForm(targetName));  
+		return (new PresidentialPardonForm (targetName));  
 		break;
 	default:
 		throw Intern::cantmake();

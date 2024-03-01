@@ -6,7 +6,7 @@
 #    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/18 13:53:05 by mben-sal          #+#    #+#              #
-#    Updated: 2024/02/18 13:53:40 by mben-sal         ###   ########.fr        #
+#    Updated: 2024/03/01 10:35:49 by mben-sal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 HEADER = ./Bureaucrat.hpp\
 		 ./Form.hpp\
-		 ./Intren.hpp\
+		 ./Intern.hpp\
 		 ./ShrubberyCreationForm.hpp\
 		 ./PresidentialPardonForm.hpp\
 		 ./RobotomyRequestForm.hpp\

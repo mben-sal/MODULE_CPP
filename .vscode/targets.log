@@ -7,10 +7,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
  
-make: *** No rule to make target `all'.  Stop.
 
-
-# Make data base, printed on Sun Jan 28 19:36:41 2024
+# Make data base, printed on Thu Feb 29 20:05:25 2024
 
 # Variables
 
@@ -27,7 +25,7 @@ VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/mben-sal/Desktop/MODULE_CPP
+CURDIR := /Users/mben-sal/Desktop/module_cpp2
 # makefile
 SHELL = /bin/sh
 # environment
@@ -43,21 +41,19 @@ PATH = /Users/mben-sal/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/u
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-LaunchInstanceID = E55C7433-7B7A-4FB3-BC90-FFF594688636
-# environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.R62EUXwKdJ/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.WF62agU8gC/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
 HOMEBREW_TEMP = /tmp/mben-sal/Homebrew/Temp
 # environment
-PWD = /Users/mben-sal/Desktop/MODULE_CPP
+PWD = /Users/mben-sal/Desktop/module_cpp2
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -117,7 +113,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000001.Electron
+XPC_SERVICE_NAME = com.microsoft.VSCode.2724
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -126,8 +122,6 @@ VSCODE_L10N_BUNDLE_LOCATION =
 +F = $(notdir $+)
 # environment
 __CF_USER_TEXT_ENCODING = 0x18EE6:0x0:0x0
-# environment
-COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -136,8 +130,6 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186a6
 # automatic
 ^F = $(notdir $^)
 # default
@@ -149,9 +141,9 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 87570
+VSCODE_PID = 59825
 # variable set hash-table stats:
-# Load=68/1024=7%, Rehash=0, Collisions=1/89=1%
+# Load=65/1024=6%, Rehash=0, Collisions=1/86=1%
 
 # Pattern-specific Variable Values
 
@@ -159,7 +151,7 @@ VSCODE_PID = 87570
 
 # Directories
 
-# . (device 16777228, inode 499552): 11 files, no impossibilities.
+# . (device 16777225, inode 895578): 11 files, no impossibilities.
 
 # 11 files, no impossibilities in 1 directories.
 
@@ -233,6 +225,8 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sun Jan 28 19:36:41 2024
+# Finished Make data base on Thu Feb 29 20:05:25 2024
 
  
+make: *** No rule to make target `all'.  Stop.
+

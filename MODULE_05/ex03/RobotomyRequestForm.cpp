@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:27:11 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/18 16:27:24 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/01 10:34:22 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,17 @@
 RobotomyRequestForm::RobotomyRequestForm() :Form("default", 0, 72, 45), target("test")
 {
 }
-RobotomyRequestForm::RobotomyRequestForm(const std::string target): Form("Robot", 0, 72, 45), target(target);
+RobotomyRequestForm::RobotomyRequestForm(const std::string target): Form("Robot", 0, 72, 45), target(target)
 {
 	
 }
-RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) :target(obj.target);
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &obj) :target(obj.target)
 {
 	*this = obj;
 }
 RobotomyRequestForm::~RobotomyRequestForm()
 {
-	std::string << "RobotomyRequestForm destructor called" << std::endl;
+	std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &obj)

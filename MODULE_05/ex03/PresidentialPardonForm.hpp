@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:26:50 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/18 16:26:53 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/02/29 20:19:03 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ private:
 public:
 	PresidentialPardonForm();
 	PresidentialPardonForm(const std::string target);
-	PresidentialPardonForm(const std::string &obj);
+	PresidentialPardonForm(const PresidentialPardonForm &obj);
 	~PresidentialPardonForm();
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &obj);
 	const std::string getTarget() const;

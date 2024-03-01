@@ -6,21 +6,21 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:27:59 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/18 16:32:02 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/01 10:32:27 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::~ShrubberyCreationForm() Form("default", 0,145, 137), target("test")
-{
-}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) : Form("Shrubbery", 0,145, 137), target(target)
 {
 	
 }
-
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("default", 0,145, 137), target("Undifined")
+{
+	
+}
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &obj) : target(obj.target)
 {
 	*this = obj;
@@ -64,6 +64,7 @@ const std::string ShrubberyCreationForm::getTarget() const
 {
 	return (target);
 }
+
 const char* ShrubberyCreationForm::creationfailed::what() const throw()
 {
 	return("==> file creation failed");
