@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 11:16:46 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/29 20:09:59 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 12:31:36 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,8 @@ public:
 	PresidentialPardonForm(const PresidentialPardonForm &obj);
 	~PresidentialPardonForm();
 	PresidentialPardonForm &operator=(const PresidentialPardonForm &obj);
-	const std::string getTarget() const;
-	void execute(Bureaucrat const &execute ) const;
-	class cantexec : public std::exception
-	{
-		const char *what() const throw();
-	};
+	
+	void action() const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 13:52:43 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/18 13:52:45 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:25:52 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,22 @@ class Form
 		const char *what() const throw();
 	};
 	Form &operator=(const Form& obj);
+	void execute(Bureaucrat const &executor) const;
+	virtual void action() const = 0;
 	void beSigned(Bureaucrat &B);
 	const std::string getName() const;
 	bool getIsSigned() const;
 	int getgradeSign() const;
 	int getgradeExecute() const;
+	class FormNotSigned : public std::exception
+    {
+    	private:
+			std::string _errorMessage;
+		public:
+			FormNotSigned(std::string const &errorMessage);
+			~FormNotSigned() throw();
+			const char *what() const throw();
+    };
 };
 std::ostream & operator << (std::ostream &print, const Form &f);
 

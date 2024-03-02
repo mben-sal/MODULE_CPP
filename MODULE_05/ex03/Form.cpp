@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 13:52:20 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/18 13:52:29 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/01 12:36:54 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,9 @@ const char *Form::GradeTooLowException::what() const throw()
 
 Form &Form::operator=(const Form &obj)
 {
-	if(this ==  &obj)
-		return *this;
-	Form *b = new Form(obj);
-	return *b;
+	if(this != &obj)
+		*this = obj;
+	return *this;
 }
 
 Form ::~Form()
@@ -69,4 +68,18 @@ void Form::beSigned(Bureaucrat &b)
 		this->is_signed = 1;
 	else 
 		throw (Form::GradeTooHighException());
+}
+
+std::ostream & operator << (std::ostream &print, const Form &f)
+{
+	std::string s = "is signed";
+	if(!f.getIsSigned())
+		s = "is not signed";
+	print << "Form Name " << f.getName() << " sign value " << s << " grade sign " << f.getgradeSign() << " grade execute " << f.getgradeExecute();
+	return (print);
+}
+
+void Form::execute(Bureaucrat const &a) const {
+	(void) a;
+	this->action();
 }

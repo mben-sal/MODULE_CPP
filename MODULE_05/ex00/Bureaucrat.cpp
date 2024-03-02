@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 18:17:53 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/25 14:38:20 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/01 14:31:19 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat(const std::string name) : _name(name)
 {
 	std::cout << "Bureaucrat param Constructor Called" << std::endl;
 	srand(time(NULL));
-	this->_grade = rand()%(150)+1;
+	this->_grade = rand()%(150) + 1;
 }
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
@@ -69,7 +69,7 @@ Bureaucrat::~Bureaucrat()
 	 std::cout << "Destructor called" << std::endl;
 }
 
-Bureaucrat & Bureaucrat::operator=(const Bureaucrat &s)
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &s)
 {
 	std::cout << "copy assignment operator called" << std::endl;
 	if(this == &s)
@@ -80,6 +80,6 @@ Bureaucrat & Bureaucrat::operator=(const Bureaucrat &s)
 
 std::ostream & operator<<(std::ostream &print, const Bureaucrat &n)
 {
-	print << n.getName() + "grade" << n.getGrade();
+	print << n.getName() + "  grade  " << n.getGrade();
 	return(print);
 }

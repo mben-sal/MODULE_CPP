@@ -12,7 +12,7 @@ private:
 public:
 	test(int i, std::string n, std::string p);
 	void afficher();
-	test(/* args */);
+	test();
 	~test();
 };
 

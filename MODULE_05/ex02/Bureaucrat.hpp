@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 10:27:20 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/26 18:18:16 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 10:26:23 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,23 @@ public:
 	Bureaucrat &operator=(const Bureaucrat& s);
 	class GradeTooHighException : public std::exception
 	{
+		public:
+		GradeTooHighException();
+		~GradeTooHighException() throw();
+		
 		const char *what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
+		public:
+			GradeTooLowException();
+			~GradeTooLowException() throw();
+		
 		const char *what() const throw();
 	};
 	void signeForm(Form& form);
+	void executeForm(Form const &form);
 };
 std::ostream & operator << (std::ostream &print, const Bureaucrat &f);
 #endif

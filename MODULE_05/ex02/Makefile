@@ -6,7 +6,7 @@
 #    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 10:29:35 by mben-sal          #+#    #+#              #
-#    Updated: 2024/02/26 18:15:36 by mben-sal         ###   ########.fr        #
+#    Updated: 2024/03/02 13:22:25 by mben-sal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,9 @@ HEADER = ./Bureaucrat.hpp\
 		 ./PresidentialPardonForm.hpp\
 		 ./RobotomyRequestForm.hpp
 
-SRC = ./Bureaucrat.cpp\
+SRC = ./main.cpp\
 	  ./Form.cpp\
-	  ./main.cpp\
+	  ./Bureaucrat.cpp\
 	  ./ShrubberyCreationForm.cpp\
 	  ./PresidentialPardonForm.cpp\
 	  ./RobotomyRequestForm.cpp

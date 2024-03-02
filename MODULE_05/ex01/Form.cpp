@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:38:19 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/17 10:47:53 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/01 15:02:45 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ Form::Form(const std::string name , bool is, int m , int s) : name(name), is_sig
 
 const char *Form::GradeTooHighException::what() const throw()
 {
-	return("=> Too High");
+	return("=> Form Too High");
 }
 const char *Form::GradeTooLowException::what() const throw()
 {
-	return("=> Too Low");
+	return("=> form Too Low");
 }
 
 Form &Form::operator=(const Form &obj)
@@ -55,11 +55,11 @@ bool Form::getIsSigned() const
 {
 	return is_signed;
 }
- int Form::getgradeSign() const
+int Form::getgradeSign() const
 {
 	return gradeSigne;
 }
- int Form::getgradeExecute() const
+int Form::getgradeExecute() const
 {	
 	return gradeSigne;
 }
@@ -70,4 +70,4 @@ void Form::beSigned(Bureaucrat &b)
 	else 
 		throw (Form::GradeTooHighException());
 }
-// const std::string Form
+

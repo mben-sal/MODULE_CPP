@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 10:28:55 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/26 18:16:51 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 11:37:45 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class Bureaucrat;
 
 class Form
 {
-	const std::string name;
+	std::string name;
 	bool is_signed;
 	const int gradeSigne;
 	const int GradeExecte;
@@ -28,19 +28,47 @@ class Form
 	Form();
 	Form(const std::string name , bool is, int m , int s);
 	Form(const Form &obj);
+	Form& operator=(Form const &a);
 	~Form();
 	
 	class GradeTooHighException : public std::exception
 	{
-		const char *what() const throw();
+		private :
+			std::string errorMessage;
+		public :
+			GradeTooHighException();
+			GradeTooHighException(std::string const &error);
+			~GradeTooHighException() throw() ;
+			
+			const char *what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
-		const char *what() const throw();
+		private:
+			std::string	errorMessage;
+		public:
+			GradeTooLowException();
+			GradeTooLowException(std::string const &error);
+			~GradeTooLowException() throw() ;
+			
+			const char *what() const throw() ;
 	};
-	Form &operator=(const Form& obj);
+	
+	class FormNotSigned : public std::exception
+	{
+		private:
+			std::string _errorMessage;
+		public:
+			FormNotSigned();
+			FormNotSigned(std::string const &errorMessage);
+			~FormNotSigned() throw();
+			
+			const char *what() const throw();
+	};
 	void beSigned(Bureaucrat &B);
+	void execute(Bureaucrat const &a) const ;
+	virtual void action() const = 0;
 	const std::string getName() const;
 	bool getIsSigned() const;
 	int getgradeSign() const;
