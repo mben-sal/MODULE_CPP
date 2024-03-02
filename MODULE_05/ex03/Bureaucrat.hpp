@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 13:52:02 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/18 13:52:04 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 14:48:56 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define BUREAUCRAT_H
 
 #include <iostream>
+#include <cstdlib>   // for srand and rand
+#include <ctime>  // for time
 #include "Form.hpp"
 
 class Form; 
@@ -35,14 +37,23 @@ public:
 	Bureaucrat &operator=(const Bureaucrat& s);
 	class GradeTooHighException : public std::exception
 	{
+		public:
+		GradeTooHighException();
+		~GradeTooHighException() throw();
+		
 		const char *what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
+		public:
+			GradeTooLowException();
+			~GradeTooLowException() throw();
+		
 		const char *what() const throw();
 	};
 	void signeForm(Form& form);
+	void executeForm(Form const &form);
 };
 std::ostream & operator << (std::ostream &print, const Bureaucrat &f);
 #endif

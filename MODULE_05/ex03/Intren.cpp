@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:25:20 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/29 20:11:36 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:48:16 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 Intern::Intern()
 {
+	std::cout << "Intern Default Constructor Called\n";
 }
 
 Intern::Intern(const Intern &obj)
@@ -30,8 +31,21 @@ Intern &Intern::operator=(const Intern &obj)
 
 Intern::~Intern()
 {
+	std::cout << "Intern Destructor Called\n" << std::endl;
 }
 
+
+Form*	Intern::ShrubberyCreation(std::string target) {
+	return (new ShrubberyCreationForm(target));
+}
+
+Form* Intern::RobotomyRequest( std::string target ) {
+	return (new RobotomyRequestForm(target));
+}
+
+Form* Intern::PresidentialPardon( std::string target ) {
+	return (new PresidentialPardonForm(target));
+}
 Form* Intern::makeForm(const std::string FormName, const std::string targetName)
 {
 	std::string FormType[3] = {"Shrubbery", "Robotomy", "Presidential"};
@@ -63,12 +77,12 @@ Form* Intern::makeForm(const std::string FormName, const std::string targetName)
 		return (new PresidentialPardonForm (targetName));  
 		break;
 	default:
-		throw Intern::cantmake();
+		throw Intern::FormNotFound();
 		break;
 	}
 }
 
-const char* Intern::cantmake::what() const throw()
+const char* Intern::FormNotFound::what() const throw()
 {
 	return("==> Can not make form");
 }

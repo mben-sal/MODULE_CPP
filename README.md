@@ -303,4 +303,12 @@ int main() {
 
     return 0;
 }
+
+explication de 
+class test : public std::exception
+{
+    const char *what() const throw();
+};
+
+Cette classe hérite de la classe std::exception et ne semble définir qu'une seule méthode, what(). La méthode what() est généralement utilisée pour obtenir une description de l'exception. Dans ce cas, elle retourne un pointeur vers une chaîne de caractères (const char*). Cela signifie que lorsqu'une instance de test est attrapée, vous pouvez utiliser la méthode what() pour obtenir des informations sur l'exception.
 ```

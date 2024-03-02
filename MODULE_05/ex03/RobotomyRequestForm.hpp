@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 15:22:25 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/18 15:22:32 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 14:51:12 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,7 @@ class RobotomyRequestForm : public Form
 	RobotomyRequestForm(const RobotomyRequestForm &obj);
 	RobotomyRequestForm &operator=(const RobotomyRequestForm &obj);
 	~RobotomyRequestForm();
-	const std::string getTarget()const;
-	void execute(Bureaucrat const &execute ) const;
-	class cantexec : public std::exception
-	{
-		const char *what() const throw();
-	};
+	void action() const;
 };
 
 #endif

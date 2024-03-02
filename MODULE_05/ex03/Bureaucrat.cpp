@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 13:51:00 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/18 13:51:32 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 14:48:39 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,44 @@ std::ostream & operator<<(std::ostream &print, const Bureaucrat &n)
 {
 	print << n.getName() + "grade" << n.getGrade();
 	return(print);
+}
+Bureaucrat::GradeTooHighException::GradeTooHighException()
+{
+	std::cout << "GradeTooHighException constructor called\n" << std::endl;
+}
+Bureaucrat::GradeTooHighException::~GradeTooHighException() throw()
+{
+	std::cout << "GradeTooHighException destructor called" << std::endl;
+}
+Bureaucrat::GradeTooLowException::~GradeTooLowException() throw()
+{
+	std::cout << "GradeTooLowException destructor called" << std::endl;
+}
+Bureaucrat::GradeTooLowException::GradeTooLowException()
+{
+	std::cout << "GradeTooLowException constructor called" << std::endl;
+}
+void Bureaucrat::signeForm(Form &f)
+{
+	try {
+		f.beSigned(*this);
+		std::cout << this->_name << " signed " << f.getName() << std::endl;
+	}
+	catch(const std::exception &e)
+	{
+		std::cout << this->_name << " couldn't sign " << f.getName() << "beacause grade is too low"<< std::endl;
+		throw;
+	}
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+	try{
+		form.execute(*this);
+	}
+	catch(const std::exception &e)
+	{
+		std::cout << "execute Form failed"<< std::endl;
+		throw;
+	}
 }

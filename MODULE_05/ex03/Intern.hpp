@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intren.hpp                                         :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:24:56 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/02/18 16:25:06 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:47:24 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,14 @@ Intern(const Intern &obj);
 Intern &operator=(const Intern& obj);
 ~Intern();
 Form* makeForm(const std::string FormName, const std::string targetName);
-class cantmake : public std::exception
+Form* ShrubberyCreation( std::string target);
+Form* RobotomyRequest( std::string target );
+Form* PresidentialPardon( std::string target );
+class FormNotFound : public std::exception
 {
-	const char *what() const throw();
+	virtual const char *what() const throw();
 };
+
 };
 
 #endif

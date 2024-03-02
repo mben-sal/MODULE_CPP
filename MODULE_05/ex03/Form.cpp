@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 13:52:20 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/01 12:36:54 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 14:49:31 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,19 @@ const char *Form::GradeTooLowException::what() const throw()
 	return("=> Too Low");
 }
 
-Form &Form::operator=(const Form &obj)
+Form& Form::operator=(const Form & obj)
 {
-	if(this != &obj)
-		*this = obj;
-	return *this;
+    std::cout << "Form copy assignment called\n";
+    
+    if (this != &obj) 
+    {
+        this->name = obj.name;
+        this->is_signed = obj.is_signed;
+    }
+
+    return *this;
 }
+
 
 Form ::~Form()
 {}
@@ -58,9 +65,10 @@ bool Form::getIsSigned() const
 {
 	return gradeSigne;
 }
- int Form::getgradeExecute() const
+
+int Form::getgradeExecute() const
 {	
-	return gradeSigne;
+	return this->GradeExecte;
 }
 void Form::beSigned(Bureaucrat &b)
 {
@@ -70,16 +78,49 @@ void Form::beSigned(Bureaucrat &b)
 		throw (Form::GradeTooHighException());
 }
 
-std::ostream & operator << (std::ostream &print, const Form &f)
+Form::GradeTooLowException::~GradeTooLowException() throw() {
+	std::cout << "GradeTooLowException Destructor Called\n";
+}
+void Form::execute(Bureaucrat const &a) const
 {
-	std::string s = "is signed";
-	if(!f.getIsSigned())
-		s = "is not signed";
-	print << "Form Name " << f.getName() << " sign value " << s << " grade sign " << f.getgradeSign() << " grade execute " << f.getgradeExecute();
-	return (print);
+	if(!this->is_signed)
+		throw FormNotSigned("the Form " + this->name + " not signed" );
+	if(a.getGrade() >= this->getgradeSign())
+		throw GradeTooLowException(a.getName() + " grade is too low to sign " + name);
+	this->action();
+}
+Form::GradeTooLowException::GradeTooLowException() {
+	std::cout << "GradeTooLowException Default Constructor Called\n";
 }
 
-void Form::execute(Bureaucrat const &a) const {
-	(void) a;
-	this->action();
+Form::GradeTooHighException::~GradeTooHighException() throw() {
+	std::cout << "GradeTooHighException Destructor Called\n";
+}
+Form::GradeTooHighException::GradeTooHighException() {
+	std::cout << "GradeTooHighException Default Constructor Called\n";
+}
+
+Form::GradeTooHighException::GradeTooHighException(std::string const &error) :errorMessage(error) {
+}
+
+Form::GradeTooLowException::GradeTooLowException(std::string const &error) :errorMessage(error) {
+}
+
+
+Form::FormNotSigned::FormNotSigned(std::string const &errorMessage) : _errorMessage(errorMessage) {
+}
+
+const char *Form::FormNotSigned::what() const throw() {
+	return (_errorMessage.c_str());
+}
+
+Form::FormNotSigned::~FormNotSigned() throw() {
+}
+
+Form::FormNotSigned::FormNotSigned()
+{
+}
+std::ostream & operator << (std::ostream &print, const Form &f) {
+	print << f.getName() << ", Form sign grade " << f.getgradeSign() << " with execute grade : " << f.getgradeExecute() << (f.getIsSigned() == 1 ? " signed" : " not Signed");
+	return (print);
 }

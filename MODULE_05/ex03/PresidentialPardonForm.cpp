@@ -6,23 +6,24 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/18 16:25:58 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/01 10:57:50 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 14:50:21 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() :  Form("Default", 0, 25, 5),targit("Undifined")
+PresidentialPardonForm::PresidentialPardonForm()
 {
+	std::cout<< "PresidentialPardonForm default constructor called" << std::endl;
 }
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string target) : Form("PresidentialPardon", 0, 25,5),targit(target)
 {
+	std::cout << "PresidentialPardonForm Constructor With Parameter Called\n";
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : targit(obj.targit)
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &obj) : Form(obj), targit(obj.targit)
 {
-	*this = obj;
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &obj)
@@ -37,20 +38,7 @@ PresidentialPardonForm::~PresidentialPardonForm()
 	std::cout << "PresidentialPardonForm destructor called" << std::endl;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const &executor) const
+void PresidentialPardonForm::action() const
 {
-	if (!this->getIsSigned() && (executor.getGrade() > this->getgradeExecute()))
-		throw PresidentialPardonForm::cantexec();
-	else	
-		std::cout << targit << " has been pardoned by Zaphod Beeblebrox" << std::endl;
-}
-
-const std::string PresidentialPardonForm::getTarget() const
-{
-	return (targit);
-}
-
-const char* PresidentialPardonForm::cantexec::what() const throw()
-{
-	return ("==> can not execute");
+	std::cout << this->targit << "has been pardoned by M" << std::endl;
 }
