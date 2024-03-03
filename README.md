@@ -282,7 +282,7 @@ int main() {
 source : https://cpp.developpez.com/faq/cpp/?page=Utilisation-des-exceptions#Comment-lever-une-exception 
  exemple :
 
- ``` 
+```
 #include <iostream>
 
   void diviser(int a, int b) {
@@ -292,7 +292,8 @@ source : https://cpp.developpez.com/faq/cpp/?page=Utilisation-des-exceptions#Com
 
     std::cout << "Résultat de la division : " << a / b << std::endl;
 }
-
+```
+```
 int main() {
     try {
         diviser(10, 2);
@@ -303,6 +304,7 @@ int main() {
 
     return 0;
 }
+```
 
 explication de 
 class test : public std::exception
@@ -311,4 +313,175 @@ class test : public std::exception
 };
 
 Cette classe hérite de la classe std::exception et ne semble définir qu'une seule méthode, what(). La méthode what() est généralement utilisée pour obtenir une description de l'exception. Dans ce cas, elle retourne un pointeur vers une chaîne de caractères (const char*). Cela signifie que lorsqu'une instance de test est attrapée, vous pouvez utiliser la méthode what() pour obtenir des informations sur l'exception.
+
+*****************************************************MODULE_06*******************************************
+
+= >  Casting operators are used for type casting in C++. They are used to convert one data type to another. C++ supports four types of casts:
+
+# Casting explicite (cast statique) :
+
+	1- static_cast
+	2- dynamique_cast
+	3- const_cast
+	4- réinterpréter_cast
+
+exemple :
+
+```
+int main ()
+{
+	int m =  4;
+	int n = 8;
+
+	float x = m/n == > (input = 0 );
+
+	float x = m / static_cast<float> (n) == > (input = 0.5) 
+}
+```
+
+# dynamic_cast :
+
+L' opérateur Dynamic_cast est principalement utilisé pour effectuer un downcasting (conversion d'un pointeur/référence d'une classe de base en une classe dérivée). Il garantit la sécurité du type en effectuant une vérification d'exécution pour vérifier la validité de la conversion.
+
+```
+	exemple:
+
+#include <iostream> 
+using namespace std; 
+  
+// Base Class 
+class Animal { 
+public: 
+    virtual void speak() const
+    { 
+        cout << "Animal speaks." << endl; 
+    } 
+}; 
+  
+// Derived Class 
+class Dog : public Animal { 
+public: 
+    void speak() const override 
+    { 
+        cout << "Dog barks." << endl; 
+    } 
+}; 
+  
+// Derived Class 
+class Cat : public Animal { 
+public: 
+    void speak() const override 
+    { 
+        cout << "Cat meows." << endl; 
+    } 
+}; 
+  
+int main() 
+{ 
+    // base class pointer to derived class object 
+    Animal* animalPtr = new Dog(); 
+  
+    // downcasting 
+    Dog* dogPtr = dynamic_cast<Dog*>(animalPtr); 
+  
+    // checking if the typecasting is successfull 
+    if (dogPtr) { 
+        dogPtr->speak(); 
+    } 
+    else { 
+        cout << "Failed to cast to Dog." << endl; 
+    } 
+	 // typecasting to other dervied class 
+    Cat* catPtr = dynamic_cast<Cat*>(animalPtr); 
+    if (catPtr) { 
+        catPtr->speak(); 
+    } 
+    else { 
+        cout << "Failed to cast to Cat." << endl; 
+    } 
+	std:: cout <<"** cas de cast Cat methode correcte **" << std::endl;
+	Animal* animalPt = new Cat();
+	
+    Cat* catPtr = dynamic_cast<Cat*>(animalPt); 
+    if (catPtr) { 
+        catPtr->speak(); 
+    } 
+    else { 
+        cout << "Failed to cast to Cat." << endl; 
+    } 
+  
+  
+    delete animalPtr; 
+    return 0; 
+}
+```
+ La première ligne de sortie est imprimée car le 'animalPtr' du type 'Animal' est correctement converti en type 'Dog' et la fonction speak() de la classe Dog est invoquée mais la conversion du type 'Animal' en Le type 'Cat' échoue car 'animalPtr' pointe vers un objet 'Dog' . Ainsi, la conversion dynamique échoue car la conversion n'est pas sûre.
+
+
+* En résumé, dynamic_cast est un outil puissant lors de l'utilisation de l'héritage polymorphe en C++, permettant des conversions sûres entre types de base et dérivés au moment de l'exécution.
+
+# const_cast
+
+L' opérateur const_cast est utilisé pour modifier le qualificatif const ou volatile d'une variable.
+
+```
+exemple :
+
+int main() {
+    const int nombreConstant = 42;
+
+    // Utilisation de const_cast avec un pointeur non constant
+    int* ptrNonConstant = const_cast<int*>(&nombreConstant);
+	
+    // Utilisation sûre : vérification que le pointeur n'est pas nullptr avant la modification
+    std::cout << "Nombre constant d'origine : " << nombreConstant << std::endl;
+    if (ptrNonConstant) {
+        std::cout << "avant change la valeur " << *ptrNonConstant <<std::endl;
+		*ptrNonConstant = 55;
+		std::cout << "apres  change la valeur " << *ptrNonConstant << std::endl;
+    }
+	
+	std::cout << "**************************************************************"<< std::endl;
+
+
+    const int number = 80; 
+    // Pointer to a const int 
+    const int* ptr = &number;
+	std::cout << "ptr = " << *ptr << std::endl;
+    // int* nonConstPtr = ptr; if we use this 
+    // instead of without using const_cast 
+    // we will get error of invalid conversion 
+    int* nonConstPtr = const_cast<int*>(ptr); 
+    *nonConstPtr = 10; 
+  
+    cout << "Modified number: " << *nonConstPtr;
+    return 0;
+}
+
+```
+# réinterpréter_cast :
+
+L' opérateur reinterpret_cast est utilisé pour convertir le pointeur en tout autre type de pointeur. Il n'effectue aucune vérification si le pointeur converti est du même type ou non.
+
+```
+	exemple :
+int main() {
+    int number = 10;
+    // Stocker l'adresse de number dans numberPointer
+    int* numberPointer = &number;
+
+    // Réinterpréter le pointeur comme un pointeur de caractère
+    char* charPointer = reinterpret_cast<char*>(numberPointer);
+
+    // Utiliser strcpy pour copier la chaîne de caractères dans la mémoire pointée par charPointer
+    strcpy(charPointer, "manar");
+
+    // Afficher les adresses mémoire et les valeurs
+    cout << "Adresse de l'entier : " << numberPointer << endl;
+    cout << "Adresse du caractère : " << reinterpret_cast<void*>(charPointer) << endl;
+    cout << "Contenu du caractère : " << charPointer << endl;
+    cout << "Contenu de l'entier : " << *numberPointer << endl;
+
+    return 0;
+}
 ```

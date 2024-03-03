@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 13:58:15 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/02 18:09:00 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/03 14:52:03 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main()
 {
 	try
 	{
-		Bureaucrat i("Manar", 148);
+		Bureaucrat i("Manar", 158);
 		std::cout << i << std::endl;
 	}
 	catch(const std::exception& e)
@@ -25,7 +25,7 @@ int main()
 	}
 	Bureaucrat bu;
 	std::cout << bu << std::endl;
-    std::cout <<  bu.getName() << ", bureaucrat grade " << bu.getGrade() << std::endl;
+    std::cout <<  bu.getName() << ", bureaucrat grade" << bu.getGrade() << std::endl;
 	// try
 	// {
 	// 	Bureaucrat b("MOHAMED", -5);
