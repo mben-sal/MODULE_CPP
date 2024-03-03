@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 13:58:15 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/01 14:29:58 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 18:09:00 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ int main()
 {
 	try
 	{
-		Bureaucrat i("Manar", 152);
-		std::cout << i << std::endl;
-		i.increment();
+		Bureaucrat i("Manar", 148);
 		std::cout << i << std::endl;
 	}
 	catch(const std::exception& e)

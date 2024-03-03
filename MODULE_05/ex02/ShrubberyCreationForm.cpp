@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 14:10:26 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/02 13:25:37 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/03 10:04:51 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ShrubberyCreationForm::ShrubberyCreationForm()
 	std::cout << "ShrubberyCreationForm Default Constructor Called\n";
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) :  Form("Shrubbery", 0,145, 137),target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string target) :  Form("Shrubbery",145, 137),target(target)
 {
 	std::cout << "ShrubberyCreationForm Constructor With Parameter Called\n";
 }
@@ -39,8 +39,7 @@ const char* ShrubberyCreationForm::filecantCreate::what() const throw()
 void ShrubberyCreationForm::action() const
 {
 	std::ofstream  File;
-	
-	File.open(target + "Shrubbery");
+	File.open(target + "_Shrubbery");
 	
 	if(!File.is_open() || File.bad())
 		throw ShrubberyCreationForm::filecantCreate();

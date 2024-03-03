@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 10:28:55 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/02 11:37:45 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/03 10:01:35 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ class Form
 	
 	public:
 	Form();
-	Form(const std::string name , bool is, int m , int s);
+	Form(const std::string name , int m , int s);
 	Form(const Form &obj);
 	Form& operator=(Form const &a);
-	~Form();
+	virtual ~Form();
 	
 	class GradeTooHighException : public std::exception
 	{

@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 12:31:17 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/02 13:13:04 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 20:26:52 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ RobotomyRequestForm::RobotomyRequestForm()
 	std::cout << "RobotomyRequestForm default constructor called\n";
 }
 
-RobotomyRequestForm::RobotomyRequestForm(const std::string target) : Form("RobotomyRequestForm", 0, 72,45),target(target)
+RobotomyRequestForm::RobotomyRequestForm(const std::string target) : Form("RobotomyRequestForm", 72,45),target(target)
 {
 }
 

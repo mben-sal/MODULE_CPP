@@ -7,9 +7,13 @@
 
 int main ()
 {
-
-Intern someRandomIntern;
-Form* rrf;
-rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-
+	try {
+		Intern someRandomIntern;
+		Form* rrf;
+		rrf = someRandomIntern.makeForm("Robotomy", "Bender");
+	}
+	catch(const std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }

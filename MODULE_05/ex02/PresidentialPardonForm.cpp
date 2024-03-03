@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 11:14:07 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/02 12:34:55 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/03 10:21:42 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ PresidentialPardonForm::PresidentialPardonForm()
 	std::cout<< "PresidentialPardonForm default constructor called" << std::endl;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(const std::string target) : Form("PresidentialPardon", 0, 25,5),targit(target)
+PresidentialPardonForm::PresidentialPardonForm(const std::string target) : Form("PresidentialPardon", 5, 25),targit(target)
 {
 	std::cout << "PresidentialPardonForm Constructor With Parameter Called\n";
 }
@@ -40,5 +40,5 @@ PresidentialPardonForm::~PresidentialPardonForm()
 
 void PresidentialPardonForm::action() const
 {
-	std::cout << this->targit << "has been pardoned by M" << std::endl;
+	std::cout << this->targit << "has been pardoned by Zaphod Beeblebrox" << std::endl;
 }

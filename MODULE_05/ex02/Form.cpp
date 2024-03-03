@@ -6,21 +6,21 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/17 10:28:41 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/02 11:39:47 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/02 20:25:16 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form() : name("default"), is_signed(0), gradeSigne(5), GradeExecte(5)
+Form::Form() : name("default"), is_signed(1), gradeSigne(1), GradeExecte(1)
 {}
 
 Form::Form(const Form &obj) : name(obj.name), is_signed(obj.gradeSigne),gradeSigne(obj.gradeSigne), GradeExecte(obj.GradeExecte)
 {
 }
 
-Form::Form(const std::string name , bool is, int m , int s) : name(name), is_signed(is), gradeSigne(m), GradeExecte(s)
+Form::Form(const std::string name , int m , int s) : name(name), is_signed(false), gradeSigne(m), GradeExecte(s)
 {
 	if(gradeSigne < 1 || GradeExecte < 1)
 		throw Form::GradeTooHighException();
