@@ -5,21 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/28 19:37:06 by mben-sal          #+#    #+#              #
-#    Updated: 2024/03/04 13:01:42 by mben-sal         ###   ########.fr        #
+#    Created: 2024/03/04 14:54:41 by mben-sal          #+#    #+#              #
+#    Updated: 2024/03/04 14:55:13 by mben-sal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = Base 
 
 CPPC = c++ 
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-HEADER = Bureaucrat.hpp\
+HEADER = Base.hpp
 
 SRC = 	./main.cpp\
-		./Bureaucrat.cpp
+		./Base.cpp
 
 OBJ = ${SRC:%.cpp=%.o}
 
@@ -28,9 +28,10 @@ OBJ = ${SRC:%.cpp=%.o}
 
 all : $(NAME)
 
-$(NAME) : $(OBJ) $(HEADER)
+$(NAME): $(OBJ) $(HEADER)
 	@$(CPPC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "compilation done"
+	@echo "Compilation done"
+
 
 clean :
 	@rm -f $(OBJ)

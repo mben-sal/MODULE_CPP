@@ -6,11 +6,11 @@
 #    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 13:21:07 by mben-sal          #+#    #+#              #
-#    Updated: 2024/03/04 13:38:20 by mben-sal         ###   ########.fr        #
+#    Updated: 2024/03/04 14:29:26 by mben-sal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Convert
+NAME = Serial
 
 CPPC = c++ 
 

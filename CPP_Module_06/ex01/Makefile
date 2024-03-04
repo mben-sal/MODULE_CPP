@@ -3,41 +3,41 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
+#    By: msaouab <msaouab@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/01/28 19:37:06 by mben-sal          #+#    #+#              #
-#    Updated: 2024/03/04 13:01:42 by mben-sal         ###   ########.fr        #
+#    Created: 2022/05/03 10:28:16 by msaouab           #+#    #+#              #
+#    Updated: 2022/07/03 13:23:36 by msaouab          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Bureaucrat
+NAME = Serial
 
-CPPC = c++ 
+SRC =	main.cpp\
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+OBJ = $(SRC:.cpp=.o)
 
-HEADER = Bureaucrat.hpp\
+CC = c++ -std=c++98
 
-SRC = 	./main.cpp\
-		./Bureaucrat.cpp
+CFLAGS = -Wall -Wextra -Werror
 
-OBJ = ${SRC:%.cpp=%.o}
+bold = $(shell tput bold)
 
-%.o : %.cpp
-	@$(CPPC) $(CFLAGS) -c $< -o $@
+magenta = `tput setaf 5`
+
+ED = \033[0m
 
 all : $(NAME)
 
-$(NAME) : $(OBJ) $(HEADER)
-	@$(CPPC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "compilation done"
+$(NAME): $(OBJ)
+		@$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+		@echo "$(bold)$(magenta)Combilation Done.$(ED)"
 
-clean :
-	@rm -f $(OBJ)
-	@echo "clean done"
+clean: 
+		@rm -f $(OBJ)
+		@echo "clean Done."
 
-fclean :clean
-	@rm -f $(NAME)
-	@echo "fclean done"
+fclean: clean
+		@rm -f $(NAME)
+		@echo "fclean Done."
 
-re : fclean all
+re: fclean all

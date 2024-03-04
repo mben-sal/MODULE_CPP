@@ -1,0 +1,6 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/msaouab/Desktop/42_Cursus/CPP-Modules/CPP_Module_06'
+make: Leaving directory `/Users/msaouab/Desktop/42_Cursus/CPP-Modules/CPP_Module_06'
+ 
+make: *** No targets specified and no makefile found.  Stop.
+
