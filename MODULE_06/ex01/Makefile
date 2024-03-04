@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/04 13:01:50 by mben-sal          #+#    #+#              #
-#    Updated: 2024/03/04 13:36:26 by mben-sal         ###   ########.fr        #
+#    Created: 2024/03/04 13:21:07 by mben-sal          #+#    #+#              #
+#    Updated: 2024/03/04 13:38:20 by mben-sal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CPPC = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-HEADER = Conversion.hpp
+# HEADER = Conversion.hpp
 
 SRC = 	./main.cpp\
 		./Conversion.cpp
