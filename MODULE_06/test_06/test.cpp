@@ -103,7 +103,7 @@ using namespace std;
 //     return 0;
 // }
 
-
+/*************************************************Reinterpreter_cast*************************/
 #include <iostream>
 #include <cstring> // Inclure la bibliothèque pour strcpy
 
