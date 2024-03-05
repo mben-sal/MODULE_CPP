@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:35:32 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/01 14:42:16 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/05 12:45:32 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Bureaucrat::Bureaucrat(const std::string name) : _name(name)
 {
 	std::cout << "Bureaucrat param Constructor Called" << std::endl;
 	srand(time(NULL));
-	this->_grade = rand()%(150)+1;
+	this->_grade = rand()%(150);
 }
 Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)
 {
@@ -88,8 +88,14 @@ std::ostream & operator<<(std::ostream &print, const Bureaucrat &n)
 
 void Bureaucrat::signeForm(Form &f)
 {
-	if (f.getIsSigned())
+	try
+	{
+		f.beSigned(*this);
 		std::cout << this->_name << " signed " << f.getName() << std::endl;
-	else 
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
 		std::cout << this->_name << " couldn't sign " << f.getName() << " beacause grade is too low"<< std::endl;
+	}
 }

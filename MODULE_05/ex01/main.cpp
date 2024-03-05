@@ -6,34 +6,25 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/10 17:33:18 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/01 14:55:23 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/05 13:05:44 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
+// 	void l()
+// {
+// 	system("leaks Bureaucrat");
+// }
 int main()
 {
+	// atexit(l);
 	try
 	{
     	Bureaucrat bu = Bureaucrat("manar", 9);
     	std::cout << bu << std::endl;
-    	bu.increment();
-    	bu.increment();
-    	bu.increment();
-    	bu.increment();
-    	bu.increment();
-    	std::cout << "increment " << bu << std::endl;
-    	bu.decrement();
-    	bu.decrement();
-    	bu.decrement();
-    	bu.decrement();
-    	bu.decrement();
-    	bu.decrement();
-    	bu.decrement();
-    	bu.decrement();
-    	Form f = Form("gene",false, 1, 90);
+    	Form f = Form("gene",false, 2, 90);
     	Form& fo = f;
     	std::cout << bu << std::endl;
     	std::cout <<  bu.getName() << ", bureaucrat grade " << bu.getGrade() << std::endl;
