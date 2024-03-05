@@ -1,7 +1,6 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory `/Users/mben-sal/Desktop/module_cpp2'
+make: Leaving directory `/Users/mben-sal/Desktop/module_cpp2'
  
 make: *** No targets specified and no makefile found.  Stop.
 
-make: Leaving directory `/Users/mben-sal/Desktop/module_cpp2'
- 

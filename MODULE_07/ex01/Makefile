@@ -5,39 +5,36 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/03/04 13:21:07 by mben-sal          #+#    #+#              #
-#    Updated: 2024/03/05 15:21:38 by mben-sal         ###   ########.fr        #
+#    Created: 2024/03/05 15:21:18 by mben-sal          #+#    #+#              #
+#    Updated: 2024/03/05 15:43:26 by mben-sal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Serial
+NAME = template
 
 CPPC = c++ 
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98 
 
+HEADER = ./iter.hpp\
 
-SRC = 	./main.cpp\
-		./Conversion.cpp
+SRC = ./main.cpp\
 
 OBJ = ${SRC:%.cpp=%.o}
 
-%.o : %.cpp
+%.o : %.cpp $(HEADER)
 	@$(CPPC) $(CFLAGS) -c $< -o $@
 
 all : $(NAME)
 
-$(NAME): $(OBJ) $(HEADER)
+$(NAME) : $(OBJ) $(HEADER)
 	@$(CPPC) $(CFLAGS) $(OBJ) -o $(NAME)
-	@echo "Compilation done"
-
+	@echo "compilation done"
 
 clean :
 	@rm -f $(OBJ)
 	@echo "clean done"
 
-fclean :clean
+fclean : clean
 	@rm -f $(NAME)
 	@echo "fclean done"
-
-re : fclean all

@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Mon Mar  4 14:55:20 2024
+# Make data base, printed on Tue Mar  5 15:43:36 2024
 
 # Variables
 
@@ -45,15 +45,14 @@ LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
 NODE_ENV = production
 # environment
-LaunchInstanceID = 4A144710-6746-4496-8E0F-FF48CDBD6A23
-# environment
 ELECTRON_RUN_AS_NODE = 1
+ 
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.rKAKanqYH1/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.9Sdu2V4LlP/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -127,7 +126,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
+XPC_SERVICE_NAME = com.microsoft.VSCode.1180
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -138,8 +137,6 @@ VSCODE_L10N_BUNDLE_LOCATION =
 MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # environment
 __CF_USER_TEXT_ENCODING = 0x18EE6:0x0:0x0
-# environment
-COMMAND_MODE = unix2003
 # default
 MAKEFILES := 
 # automatic
@@ -148,8 +145,6 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
-# environment
-SECURITYSESSIONID = 186a6
 # automatic
 ^F = $(notdir $^)
 # default
@@ -159,12 +154,11 @@ SUFFIXES :=
 # environment
 MAKELEVEL := 0
 # environment
- 
 LANG = C
 # environment
-VSCODE_PID = 84582
+VSCODE_PID = 60288
 # variable set hash-table stats:
-# Load=74/1024=7%, Rehash=0, Collisions=2/95=2%
+# Load=71/1024=7%, Rehash=0, Collisions=2/92=2%
 
 # Pattern-specific Variable Values
 
@@ -172,9 +166,9 @@ VSCODE_PID = 84582
 
 # Directories
 
-# . (device 16777228, inode 895578): 14 files, no impossibilities.
+# . (device 16777228, inode 895578): 15 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -209,6 +203,7 @@ Makefile:
 
 # Not a target:
 makefile:
+ 
 #  A default, MAKEFILES, or -include/sinclude makefile.
 #  Implicit rule search has been done.
 #  File does not exist.
@@ -246,6 +241,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Mon Mar  4 14:55:20 2024
+# Finished Make data base on Tue Mar  5 15:43:36 2024
 
  

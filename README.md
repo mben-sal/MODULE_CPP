@@ -553,3 +553,11 @@ int main() {
     return 0;
 }
 ```
+
+source : https://openclassrooms.com/fr/courses/7137751-programmez-en-oriente-objet-avec-c/7533236-creez-des-templates
+
+
+**********************************MODULE_08************************************
+
+# Containers templates :
+
