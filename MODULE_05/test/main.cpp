@@ -17,7 +17,7 @@ int main(){
 	
 	try{
 		std::cout<<division(a,b);
-	}catch(const char* msg){
+	}catch( const char* msg){
 		std::cerr<<msg; //character error
 	}
 	
