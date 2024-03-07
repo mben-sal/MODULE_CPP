@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:55:31 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/07 12:58:28 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/07 19:07:25 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,19 +30,19 @@ void identify(Base* p)
 {
 	A *ptr_a = dynamic_cast<A*>(p);
 
-	if(ptr_a != nullptr)
+	if(ptr_a != NULL)
 	{
 		std::cout<< "A" << std::endl;
 		return;
 	}
 	B *ptr_b = dynamic_cast<B*>(p);
-	if(ptr_b != nullptr)
+	if(ptr_b != NULL)
 	{
 		std::cout << "B" << std::endl;
 		return;
 	}
 	C *ptr_c = dynamic_cast<C*>(p);
-	if(ptr_c != nullptr)
+	if(ptr_c != NULL)
 	{
 		std::cout<< "C" << std::endl;
 		return;

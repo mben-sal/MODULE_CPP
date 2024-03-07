@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:42:22 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/07 15:57:27 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/07 19:02:30 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ Conversion::Conversion(std::string str)
 {
 	this->str = str;
 	this->print = 1;
+	this->type = "non";
 	this->getType();
 }
 
@@ -33,7 +34,6 @@ Conversion::~Conversion()
 {
 	
 }
-
 
 Conversion &Conversion::operator=(Conversion const &a)
 {
@@ -49,14 +49,40 @@ Conversion &Conversion::operator=(Conversion const &a)
 
 void Conversion::getType()
 {
-	
-	if(!check_int() && !check_char() && !check_double() && !check_float())
+	if (!this->str.compare("-inf") || !this->str.compare("+inf"))
 	{
-		std::cout << "arguments type unkown"<< std::endl;
-		return;
+			// this->print_type();
+			std::cout<<" char : impossible"<< std::endl;
+			std::cout<<" double : impossible"<< std::endl;
+			std::cout<<" float : impossible"<< std::endl;
+			std::cout<<" int : impossible"<< std::endl;
 	}
-	this->cast();
-	this->print_type();
+	else if (!this->str.compare("nan") || !this->str.compare("nanf"))
+	{
+		std::cout<<" char : impossible"<< std::endl;
+		std::cout<<" double : impossible"<< std::endl;
+		std::cout<<" float : nanf"<< std::endl;
+		std::cout<<" int : nan"<< std::endl;
+	}
+	else
+	{
+		check_double();
+		check_int();
+		check_char();
+		check_float();
+		if(!this->type.compare("non"))
+		{
+			std::cout<<" char : impossible"<< std::endl;
+			std::cout<<" double : impossible"<< std::endl;
+			std::cout<<" float : impossible"<< std::endl;
+			std::cout<<" int : impossible"<< std::endl;
+		}
+		else
+		{
+			this->cast();
+			this->print_type();
+		}
+	}
 }	
 
 bool Conversion::check_char()
@@ -73,13 +99,21 @@ bool Conversion::check_char()
 
 bool Conversion::check_int()
 {
-	size_t i ;
+	long double nbr;
+	std::stringstream s(str);
 	try
 	{
-		this->_int = stoi(str, &i);
-		if( i != this->str.length())
-			return (0);
-		this->type = "int";
+		s >> nbr;
+		if (s.fail() || nbr > std::numeric_limits<int>::max() || nbr < std::numeric_limits<int>::min())
+		{
+			return(0);
+			
+		}
+		else
+		{
+			this->_int = nbr;
+			this->type = "int";
+		}
 		return(1);
 	}
 	catch(const std::exception& e)
@@ -88,16 +122,19 @@ bool Conversion::check_int()
 		return(0);
 	}
 }
-
 bool Conversion::check_float()
 {
-	size_t i ;
+	float nbr;
+	size_t i = 0;
+	std::stringstream s(str);
 	try
 	{
-		this->_Float = stof(str, &i);
-		if (this->str != "-inff" && this->str != "+inff"  && this->str != "nanf")
-			if (i != str.length() - 1 || str.find('.') == std::string::npos || str.c_str()[i] != 'f')
-				return (0);
+		s >> nbr;
+		this->_Float = nbr;
+		if (s.fail() || nbr > std::numeric_limits<float>::max())
+			return(0);
+		if (i != str.length() - 1 || str.find('.') == std::string::npos || str.c_str()[i] != 'f')
+			return (0);
 		this->type = "float";
 		return(1);
 	}
@@ -108,13 +145,18 @@ bool Conversion::check_float()
 }
 
 bool	Conversion::check_double() {
-	size_t	i;
-
+	long double nbr;
+	size_t i = 0;
+	std::stringstream s(str);
 	try {
-		this->_double = stod(str, &i);
-		if (this->str != "-inf" && this->str != "+inf"  && this->str != "nan")
-			if (i != str.length() || str.find('.') == std::string::npos || str.c_str()[i] != '\0')
-				return (false);
+		s >> nbr;
+		this->_double = nbr;
+		if (s.fail() || nbr > std::numeric_limits<double>::max())
+		{
+			return(0);
+		}
+		if (i != str.length() || str.find('.') == std::string::npos || str.c_str()[i] != '\0')
+			return (0);
 		this->type = "double";
 		return (1);
 	}
@@ -189,17 +231,29 @@ void Conversion::print_char()
 
 void Conversion::print_double()
 {
-	std::cout<< "double : " << std::fixed << std::setprecision(1) << this->_double << std::endl;
+
+	 if(print == 0)
+	{
+		std::cout<<" impossible"<< std::endl;
+	}
+	else 
+		std::cout<< "double : " << std::fixed << std::setprecision(1) << this->_double << std::endl;
 }
 
 void Conversion::print_float()
 {
-	std::cout << "float : " << std::fixed << std::setprecision(1) << this->_Float << "f "<< std::endl;
+	
+	if(print == 0)
+	{
+		std::cout<<" impossible"<< std::endl;
+	}
+	else
+		std::cout << "float : " << std::fixed << std::setprecision(1) << this->_Float << "f "<< std::endl;
 }
 
 void Conversion::print_int()
 {
-	if(!print)
+	if(print == 0)
 	{
 		std::cout<<" int impossible"<< std::endl;
 	}

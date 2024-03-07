@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:28:32 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/04 13:14:12 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/07 16:55:01 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include"iostream"
 #include"iomanip"
+#include <sstream>
+#include <limits>
 
 
 class Conversion
@@ -27,11 +29,11 @@ class Conversion
 		int _int;
 		float _Float;
 		double _double;
-	public:
 		Conversion();
+	public:
 		Conversion(std::string str);
-		Conversion(Conversion const &str);
 		~Conversion();
+		Conversion(Conversion const &str);
 		Conversion &operator=(Conversion const &a);
 		void getType();
 		bool check_int();
