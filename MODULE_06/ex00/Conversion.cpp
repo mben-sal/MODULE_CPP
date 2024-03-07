@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:42:22 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/04 13:34:20 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:57:27 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Conversion::Conversion(std::string str)
 	this->getType();
 }
 
-Conversion::Conversion(Conversion const &str)
+Conversion::Conversion(const Conversion &str)
 {
 	*this = str;
 }
@@ -49,9 +49,11 @@ Conversion &Conversion::operator=(Conversion const &a)
 
 void Conversion::getType()
 {
-	if(!check_char() && !check_double() && !check_float() && !check_int())
+	
+	if(!check_int() && !check_char() && !check_double() && !check_float())
 	{
 		std::cout << "arguments type unkown"<< std::endl;
+		return;
 	}
 	this->cast();
 	this->print_type();
@@ -101,7 +103,6 @@ bool Conversion::check_float()
 	}
 	catch(const std::exception& e)
 	{
-		print = 0;
 		return(0);
 	}
 }
@@ -142,8 +143,11 @@ void Conversion::to_char()
 
 void Conversion::to_double()
 {
-	this->_int = static_cast<int>(this->_double);
-	this->_char = static_cast<char>(this->_double);
+	if(print)
+	{
+		this->_char = static_cast<char>(this->_double);
+		this->_int = static_cast<int>(this->_double);
+	}
 	this->_Float = static_cast<float>(this->_double);
 }
 
@@ -154,17 +158,15 @@ void Conversion::to_float()
 		this->_int = static_cast<int>(this->_Float);
 		this->_char = static_cast<char>(this->_Float);
 	}
-	this->_double = static_cast<float>(this->_Float);
+	this->_double = static_cast<double>(this->_Float);
 }
 
 void Conversion::to_int()
 {
-	if(print)
-	{
-		this->_char = static_cast<char>(this->_int);
-		this->_double = static_cast<float>(this->_int);
-	}
-	this->_Float = static_cast<int>(this->_int);
+	
+	this->_char = static_cast<char>(this->_int);
+	this->_double = static_cast<double>(this->_int);
+	this->_Float = static_cast<float>(this->_int);
 }
 
 void Conversion::print_type()
@@ -182,17 +184,17 @@ void Conversion::print_char()
 	else if(this->_int > 126 || this->_int < 32 )
 		std::cout << "char : non displayable "<< std::endl;
 	else
-		std::cout << "char" << std::endl;
+		std::cout << "char : " << this->_char << std::endl;
 }
 
 void Conversion::print_double()
 {
-	std::cout<< "double" <<std::endl;
+	std::cout<< "double : " << std::fixed << std::setprecision(1) << this->_double << std::endl;
 }
 
 void Conversion::print_float()
 {
-	std::cout << "float" << std::endl;
+	std::cout << "float : " << std::fixed << std::setprecision(1) << this->_Float << "f "<< std::endl;
 }
 
 void Conversion::print_int()
@@ -202,5 +204,5 @@ void Conversion::print_int()
 		std::cout<<" int impossible"<< std::endl;
 	}
 	else
-		std::cout << "int :" << std::endl;
+		std::cout << "int : " << this->_int << std::endl;
 }

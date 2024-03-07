@@ -6,23 +6,40 @@ float division(int a, int b){
 		throw "Division par zero !!";
 	return a/b;
 }
-
-int main(){
-	int a,b;
+void mmm(char s)
+{
+	if(s == 97)
+		throw "errrreur";
+	std::cout << "manar" << std::endl;
 	
-	std::cout<<"Donnez a: ";
-	std::cin>>a;
-	std::cout<<"Donnez b: ";
-	std::cin>>b;
+
+}
+int main(){
+	// int a,b;
+	
+	// std::cout<<"Donnez a: ";
+	// std::cin>>a;
+	// std::cout<<"Donnez b: ";
+	// std::cin>>b;
 	
 	try{
-		std::cout<<division(a,b);
-	}catch( const char* msg){
-		std::cerr<<msg; //character error
+		throw 1;
+		// std::cout<<division(a,b);
+	}catch(char *s){
+		std::cerr << "test" << std::endl;
+		// std::cerr<<msg; //character error
 	}
+	// try
+	// {
+	// 	mmm('w');
+	// }
+	// catch(const char *msg)
+	// {
+	// 		std::cerr<< msg;
+	// }
 	
-	std::cout<<"end";
-	return 0;
+	// std::cout<<"end";
+	// return 0;
 }
 
 //g++ -std=c++11 test.cpp -o test -lstdc++

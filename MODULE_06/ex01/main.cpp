@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:20:59 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/04 14:39:44 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/07 14:58:58 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,6 @@ int main()
 
     std::cout << "counter : " << returnedData->count << std::endl;
     std::cout << "Data Serial : " << returnedData->Serial <<std::endl;
-
+ 
     return (0);
 }

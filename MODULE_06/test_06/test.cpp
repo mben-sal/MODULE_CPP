@@ -1,8 +1,8 @@
  
-#include <iostream> 
-using namespace std; 
+// #include <iostream> 
+// using namespace std; 
 
-/***************************** dynamic_cast ********************************/
+// /***************************** dynamic_cast ********************************/
 // class Animal { 
 // public: 
 //     virtual void speak() const
@@ -31,27 +31,22 @@ using namespace std;
   
 // int main() 
 // { 
-//     // base class pointer to derived class object 
+// 	/*********************** par pointer *************/
 //     Animal* animalPtr = new Dog(); 
-  
-//     // downcasting 
 //     Dog* dogPtr = dynamic_cast<Dog*>(animalPtr); 
-  
-//     // checking if the typecasting is successfull 
 //     if (dogPtr) { 
 //         dogPtr->speak(); 
 //     } 
 //     else { 
 //         cout << "Failed to cast to Dog." << endl; 
 //     } 
-// 	 // typecasting to other dervied class 
 //     Cat* catPtr = dynamic_cast<Cat*>(animalPtr); 
 //     if (catPtr) { 
 //         catPtr->speak(); 
 //     } 
 //     else { 
 //         cout << "Failed to cast to Cat." << endl; 
-//     } 
+//     }
 // 	std:: cout <<"** cas de cast Cat methode correcte **" << std::endl;
 // 	Animal* animalPt = new Cat();
 	
@@ -62,10 +57,13 @@ using namespace std;
 //     else { 
 //         cout << "Failed to cast to Cat." << endl; 
 //     } 
+	/**********************par reference*************************/
+	// Animal *nm = new Cat();
+	// Cat &a = dynamic_cast<Cat&>(*nm);
+	// a.speak();
   
-  
-//     delete animalPtr; 
-//     return 0; 
+    // delete animalPtr; 
+    // return 0; 
 // }
 
 // /*****************************************const_cast*************************/
@@ -104,28 +102,31 @@ using namespace std;
 // }
 
 /*************************************************Reinterpreter_cast*************************/
-#include <iostream>
-#include <cstring> // Inclure la bibliothèque pour strcpy
+// #include <iostream>
+// #include <cstring> // Inclure la bibliothèque pour strcpy
 
-using namespace std;
+// using namespace std;
 
-int main() {
-    int number = 10;
-    // Stocker l'adresse de number dans numberPointer
-    int* numberPointer = &number;
+// int main() {
+//     char number = 'a';
 
-    // Réinterpréter le pointeur comme un pointeur de caractère
-    char* charPointer = reinterpret_cast<char*>(numberPointer);
+//     char* numberPointer = &number;
+// 	std::cout << *numberPointer << std::endl;
+//     // Réinterpréter le pointeur comme un pointeur de caractère
+//     int* charPointer = reinterpret_cast<int*>(numberPointer);
 
-    // Utiliser strcpy pour copier la chaîne de caractères dans la mémoire pointée par charPointer
-    strcpy(charPointer, "manar");
+//     // Utiliser strcpy pour copier la chaîne de caractères dans la mémoire pointée par charPointer
+//     // strcpy(charPointer, "manar");
 
-    // Afficher les adresses mémoire et les valeurs
-    cout << "Adresse de l'entier : " << numberPointer << endl;
-    cout << "Adresse du caractère : " << reinterpret_cast<void*>(charPointer) << endl;
-    cout << "Contenu du caractère : " << charPointer << endl;
-    cout << "Contenu de l'entier : " << *numberPointer << endl;
+//     // Afficher les adresses mémoire et les valeurs
+//     cout << "Adresse de l'entier : " << numberPointer << endl;
+//     cout << "Adresse du caractère : " << reinterpret_cast<void*>(charPointer) << endl;
+//     cout << "Contenu du caractère : " << *charPointer << endl;
+//     cout << "Contenu de l'entier : " << *numberPointer << endl;
 
-    return 0;
-}
+//     return 0;
+// }
 
+
+
+// g++ -std=c++11 test.cpp -o test -lstdc++

@@ -6,7 +6,7 @@
 #    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 13:21:07 by mben-sal          #+#    #+#              #
-#    Updated: 2024/03/05 15:21:38 by mben-sal         ###   ########.fr        #
+#    Updated: 2024/03/06 17:30:15 by mben-sal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,6 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 
 SRC = 	./main.cpp\
-		./Conversion.cpp
 
 OBJ = ${SRC:%.cpp=%.o}
 

@@ -2,7 +2,7 @@ NAME = test
 
 CPPC = c++ 
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS =  -std=c++98
 
 HEADER = test.hpp\
 
