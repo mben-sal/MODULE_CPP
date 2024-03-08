@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:42:22 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/07 19:02:30 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/08 18:20:55 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ Conversion::~Conversion()
 	
 }
 
+void	Conversion::Convert(std::string &str)
+{
+	Conversion a(str);
+}
+
 Conversion &Conversion::operator=(Conversion const &a)
 {
     this->_char = a._char;
@@ -51,7 +56,6 @@ void Conversion::getType()
 {
 	if (!this->str.compare("-inf") || !this->str.compare("+inf"))
 	{
-			// this->print_type();
 			std::cout<<" char : impossible"<< std::endl;
 			std::cout<<" double : impossible"<< std::endl;
 			std::cout<<" float : impossible"<< std::endl;
@@ -63,6 +67,13 @@ void Conversion::getType()
 		std::cout<<" double : impossible"<< std::endl;
 		std::cout<<" float : nanf"<< std::endl;
 		std::cout<<" int : nan"<< std::endl;
+	}
+	else if (this->str[0] == '0')
+	{
+		std::cout<<" char : Non displayable"<< std::endl;
+		std::cout<<" double : 0.0"<< std::endl;
+		std::cout<<" float : 0.0f"<< std::endl;
+		std::cout<<" int : 0"<< std::endl;
 	}
 	else
 	{

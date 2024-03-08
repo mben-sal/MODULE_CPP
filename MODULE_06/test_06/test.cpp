@@ -102,30 +102,30 @@
 // }
 
 /*************************************************Reinterpreter_cast*************************/
-// #include <iostream>
-// #include <cstring> // Inclure la bibliothèque pour strcpy
+#include <iostream>
+#include <cstring> // Inclure la bibliothèque pour strcpy
 
-// using namespace std;
+using namespace std;
 
-// int main() {
-//     char number = 'a';
+int main() {
+    int   number = 48;
 
-//     char* numberPointer = &number;
-// 	std::cout << *numberPointer << std::endl;
-//     // Réinterpréter le pointeur comme un pointeur de caractère
-//     int* charPointer = reinterpret_cast<int*>(numberPointer);
+   int * numberPointer = &number;
+	std::cout << *numberPointer << std::endl;
+    // Réinterpréter le pointeur comme un pointeur de caractère
+    char* charPointer = reinterpret_cast<char*>(numberPointer);
 
-//     // Utiliser strcpy pour copier la chaîne de caractères dans la mémoire pointée par charPointer
-//     // strcpy(charPointer, "manar");
+    // Utiliser strcpy pour copier la chaîne de caractères dans la mémoire pointée par charPointer
+    // strcpy(charPointer, "manar");
 
-//     // Afficher les adresses mémoire et les valeurs
-//     cout << "Adresse de l'entier : " << numberPointer << endl;
-//     cout << "Adresse du caractère : " << reinterpret_cast<void*>(charPointer) << endl;
-//     cout << "Contenu du caractère : " << *charPointer << endl;
-//     cout << "Contenu de l'entier : " << *numberPointer << endl;
+    // Afficher les adresses mémoire et les valeurs
+    cout << "Adresse de l'entier : " << &numberPointer << endl;
+    cout << "Adresse du caractère : " << reinterpret_cast<void*>(charPointer) << endl;
+    cout << "Contenu du caractère : " << *charPointer << endl;
+    cout << "Contenu de l'entier : " << *numberPointer << endl;
 
-//     return 0;
-// }
+    return 0;
+}
 
 
 

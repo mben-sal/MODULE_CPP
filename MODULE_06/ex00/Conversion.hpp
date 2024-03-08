@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 10:28:32 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/07 16:55:01 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/08 18:03:57 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ class Conversion
 		float _Float;
 		double _double;
 		Conversion();
-	public:
 		Conversion(std::string str);
 		~Conversion();
 		Conversion(Conversion const &str);
+	public:
 		Conversion &operator=(Conversion const &a);
 		void getType();
 		bool check_int();
@@ -50,7 +50,7 @@ class Conversion
 		void print_int();
 		void print_float();
 		void print_double();
-		
+		static void Convert(std::string &str);
 };
 
 
