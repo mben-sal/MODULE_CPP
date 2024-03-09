@@ -6,12 +6,12 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:50:23 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/05 15:20:20 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/08 10:28:06 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WHATEVER.HPP
-# define WHATEVER.HPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
 #include"iostream"
 

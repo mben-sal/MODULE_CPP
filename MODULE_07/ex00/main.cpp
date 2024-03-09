@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:50:10 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/05 15:05:13 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/08 10:34:22 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ std::string d = "chaine2";
 std::cout << "c = " << c << ", d = " << d << std::endl;
 std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
 std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
+
 return 0;
 }

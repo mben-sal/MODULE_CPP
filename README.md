@@ -561,7 +561,10 @@ source : https://openclassrooms.com/fr/courses/7137751-programmez-en-oriente-obj
 
 # Containers vector :
 
+Les vecteurs sont identiques aux tableaux dynamiques avec la possibilité de se redimensionner automatiquement lorsqu'un élément est inséré ou supprimé, leur stockage étant géré automatiquement par le conteneur
 
+// typename T::const_iterator it = std::find(container.begin(), container.end(), value);
+// int i = find(0, n, 5)
 
 
 

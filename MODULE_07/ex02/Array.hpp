@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:23:24 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/06 10:59:10 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/08 12:21:18 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,9 @@ public:
 	T &operator [](unsigned int n)
 	{
 		if(this->l <= n)
+		{
 			throw(Array::OutofrangeException());
+		}
 		return array[n];
 	}
 	T *getArray() const

@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Thu Mar  7 14:01:58 2024
+# Make data base, printed on Fri Mar  8 20:29:32 2024
 
 # Variables
 
@@ -43,7 +43,7 @@ PATH = /Users/mben-sal/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/u
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-LaunchInstanceID = 5C20D1FB-2245-47DE-8812-4F0C6C20759D
+LaunchInstanceID = 60893A1C-8464-4920-9373-8C9FFAA9C9CB
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -51,7 +51,7 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.aApJ8sKa5R/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.Zb6Z7T9SVO/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
@@ -117,7 +117,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -137,7 +137,7 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
-SECURITYSESSIONID = 186a4
+SECURITYSESSIONID = 186a6
 # automatic
 ^F = $(notdir $^)
 # default
@@ -149,7 +149,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 51235
+VSCODE_PID = 76543
 # variable set hash-table stats:
 # Load=68/1024=7%, Rehash=0, Collisions=1/89=1%
 
@@ -159,9 +159,9 @@ VSCODE_PID = 51235
 
 # Directories
 
-# . (device 16777228, inode 895578): 16 files, no impossibilities.
+# . (device 16777228, inode 895578): 15 files, no impossibilities.
 
-# 16 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -233,6 +233,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Thu Mar  7 14:01:58 2024
+# Finished Make data base on Fri Mar  8 20:29:32 2024
 
  
