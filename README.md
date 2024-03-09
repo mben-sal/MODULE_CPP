@@ -559,13 +559,106 @@ source : https://openclassrooms.com/fr/courses/7137751-programmez-en-oriente-obj
 
 **********************************MODULE_08************************************
 
-# Containers vector :
+# Containers 
 
-Les vecteurs sont identiques aux tableaux dynamiques avec la possibilité de se redimensionner automatiquement lorsqu'un élément est inséré ou supprimé, leur stockage étant géré automatiquement par le conteneur
+	* vector , stack :
+	Les vecteurs sont identiques aux tableaux dynamiques avec la possibilité de se redimensionner automatiquement lorsqu'un élément est inséré ou supprimé, leur stockage étant géré automatiquement par le conteneur
 
 // typename T::const_iterator it = std::find(container.begin(), container.end(), value);
 // int i = find(0, n, 5)
 
+```
+vec =  [10, 20, 30, 40, 50]
 
+vec.begin() = 10
+vec.end() = 50
 
-# containers stack :
+vec.size() = 5
+
+vec[0] = 10
+vec[1] = 20
+vec[2] = 30
+vec[3] = 40
+vec[4] = 50
+vec.capacity() = 5
+vec = [10, 20, 30, 40, 50, 60, 70]
+vec.begin() = 10
+vec.end() = 70
+vec.size() = 7
+vec.capacity() = 10
+
+vec = [10, 20, 30, 40, 50, 60, 70, 80]
+vec.begin() = 10
+vec.end() = 80
+vec.size() = 8
+vec.capacity() = 10
+
+vec = [10, 20, 30, 40, 50, 60, 70, 80, 90]
+vec.begin() = 10
+vec.end() = 90
+vec.size() = 9
+vec.capacity() = 10
+
+vec = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+vec.begin() = 10
+vec.end() = 100
+vec.size() = 10
+vec.capacity() = 10
+
+vec = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
+vec.begin() = 10
+vec.end() = 110
+vec.size() = 11
+vec.capacity() = 20
+
+vec = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200]
+vec.begin() = 10
+vec.end() = 200
+vec.size() = 20
+vec.capacity() = 20
+
+vec = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280, 290, 300]
+vec.begin() = 10
+vec.end() = 300
+vec.size() = 30
+vec.capacity() = 40
+```
+auter exemple :
+```
+// vector<int> v;
+
+// v.push_back(5);
+// v.push_back(17);
+// v.push_back(3);
+
+// output: 5 17 3
+
+// v.pop_back();
+
+// output: 5 17
+```
+	* deque :
+	ce qui signifie que vous pouvez ajouter et supprimer des éléments à la fois en début et en fin de la séquence de manière efficace. C'est la principale différence par rapport à std::vector.
+
+exemple :
+```
+#include <deque>
+#include <iostream>
+
+int main() {
+    std::deque<int> myDeque;
+
+    myDeque.push_back(1);
+    myDeque.push_front(2);
+    myDeque.push_back(3);
+
+    for (auto it = myDeque.begin(); it != myDeque.end(); ++it) {
+        std::cout << *it << " ";
+    }
+
+    return 0;
+}
+```
+	
+- red black tree:
+	- binary search in map and set
