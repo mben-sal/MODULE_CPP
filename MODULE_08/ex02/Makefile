@@ -6,11 +6,11 @@
 #    By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/09 12:09:59 by mben-sal          #+#    #+#              #
-#    Updated: 2024/03/09 12:14:53 by mben-sal         ###   ########.fr        #
+#    Updated: 2024/03/09 14:21:15 by mben-sal         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Span
+NAME = MutantStack
 
 CPPC = c++ 
 
