@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:45:01 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/08 12:26:24 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/10 16:09:12 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int main()
         Array <int> copy(6);
         data[0] = 1000;
         copy = data;
-        std::cout << copy[1] << std::endl;
+        std::cout << copy[0] << std::endl;
         copy[1] = 120;
         std::cout << copy[1] << std::endl;
         std::cout << copy[2] << std::endl;
         std::cout << copy[5] << std::endl;
-        std::cout << copy[7] << std::endl;
+        // std::cout << copy[7] << std::endl;
         
     } catch (std::exception &e) {
         std::cout << e.what() << std::endl;

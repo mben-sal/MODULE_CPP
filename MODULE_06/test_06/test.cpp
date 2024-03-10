@@ -108,12 +108,12 @@
 using namespace std;
 
 int main() {
-    int   number = 48;
+    char  number = 48;
 
-   int * numberPointer = &number;
+   char * numberPointer = &number;
 	std::cout << *numberPointer << std::endl;
     // Réinterpréter le pointeur comme un pointeur de caractère
-    char* charPointer = reinterpret_cast<char*>(numberPointer);
+   int* charPointer = reinterpret_cast<int*>(numberPointer);
 
     // Utiliser strcpy pour copier la chaîne de caractères dans la mémoire pointée par charPointer
     // strcpy(charPointer, "manar");

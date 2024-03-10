@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 14:50:23 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/08 10:28:06 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/10 19:50:42 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ template<typename T>
 T &min(T &x, T &y)
 {
 	if(x > y)
-		return x;
-	return y;
+		return y;
+	return x;
 }
 
 template <typename T>
@@ -37,8 +37,8 @@ template <typename T>
 T &max(T &x, T &y)
 {
 	if(x < y)
-		return x;
-	return y;
+		return y;
+	return x;
 }
 
 #endif
