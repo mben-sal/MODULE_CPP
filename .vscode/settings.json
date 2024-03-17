@@ -63,7 +63,11 @@
     "sstream": "cpp",
     "stack": "cpp",
     "unordered_map": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "__tree": "cpp",
+    "map": "cpp",
+    "set": "cpp",
+    "queue": "cpp"
   },
   "C_Cpp_Runner.cCompilerPath": "clang",
   "C_Cpp_Runner.cppCompilerPath": "clang++",

@@ -10,7 +10,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 make: *** No rule to make target `all'.  Stop.
 
 
-# Make data base, printed on Sun Mar 10 19:27:27 2024
+# Make data base, printed on Sun Mar 17 19:30:54 2024
 
 # Variables
 
@@ -27,7 +27,7 @@ VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/mben-sal/Desktop/module_cpp2
+CURDIR := /Users/mben-sal/Desktop/MODULE_CPP
 # makefile
 SHELL = /bin/sh
 # environment
@@ -39,11 +39,11 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /Users/mben-sal/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands
+PATH = /Users/mben-sal/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-LaunchInstanceID = BC91B173-C684-4B62-99D8-00FDFA28CFFE
+LaunchInstanceID = 0D60046F-5E05-4D63-B872-CDF0A23BB445
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
@@ -51,13 +51,13 @@ ELECTRON_RUN_AS_NODE = 1
 # environment
 LS_COLORS = di=1;36:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.0Nw4evsN5J/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.FQuxoqzGsA/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
 HOMEBREW_TEMP = /tmp/mben-sal/Homebrew/Temp
 # environment
-PWD = /Users/mben-sal/Desktop/module_cpp2
+PWD = /Users/mben-sal/Desktop/MODULE_CPP
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
@@ -117,7 +117,7 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000003.Electron
+XPC_SERVICE_NAME = com.apple.xpc.launchd.oneshot.0x10000002.Electron
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -137,7 +137,7 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
-SECURITYSESSIONID = 186a3
+SECURITYSESSIONID = 186a5
 # automatic
 ^F = $(notdir $^)
 # default
@@ -149,7 +149,7 @@ MAKELEVEL := 0
 # environment
 LANG = C
 # environment
-VSCODE_PID = 7237
+VSCODE_PID = 87156
 # variable set hash-table stats:
 # Load=68/1024=7%, Rehash=0, Collisions=1/89=1%
 
@@ -159,9 +159,9 @@ VSCODE_PID = 7237
 
 # Directories
 
-# . (device 16777228, inode 895578): 15 files, no impossibilities.
+# . (device 16777228, inode 1305639): 18 files, no impossibilities.
 
-# 15 files, no impossibilities in 1 directories.
+# 18 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -233,6 +233,6 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Sun Mar 10 19:27:27 2024
+# Finished Make data base on Sun Mar 17 19:30:54 2024
 
  

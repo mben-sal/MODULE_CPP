@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MustantStack.hpp                                   :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:10:17 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/09 12:11:02 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:04:36 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,10 @@ class MutantStack : public std::stack<Type, Container>
 		iterator end() {
 			return this->c.end();
 		}
+		// void add(Type value)
+		// {
+		// 	this->c.push_back(value);
+		// }
 };
 
 #endif

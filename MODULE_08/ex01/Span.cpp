@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 11:02:46 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/09 11:45:19 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/14 20:58:38 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ unsigned int		Span::shortestSpan() const {
 	if (this->_vec.size() <= 1)
 		throw NoSpan();
 	else
-		return (*std::min_element(this->_vec.begin(), this->_vec.end()));
+	{
+		std::vector<int>::const_iterator it = min_element(this->_vec.begin(), this->_vec.end());
+		return (*it);
+	}
+	// return (*std::min_element(this->_vec.begin(), this->_vec.end()));
 }
 
 

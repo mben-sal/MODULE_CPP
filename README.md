@@ -560,10 +560,41 @@ source : https://openclassrooms.com/fr/courses/7137751-programmez-en-oriente-obj
 **********************************MODULE_08************************************
 
 # Containers 
+est une structure de données qui stocke un ensemble d'éléments d'un même type  Les containers sont essentiellement utilisés pour organiser et manipuler des données de manière efficace
 
-	* vector , stack :
-	Les vecteurs sont identiques aux tableaux dynamiques avec la possibilité de se redimensionner automatiquement lorsqu'un élément est inséré ou supprimé, leur stockage étant géré automatiquement par le conteneur
+	- vector :  d'un tableau dynamique avec la possibilité de se redimensionner automatiquement ; std :: vector <dataType> vectorName 
+	- deque : Voici quelques caractéristiques clés de `std::deque` :
 
+1. **Accès rapide aux extrémités** : `std::deque` permet un accès rapide et efficace aux éléments à la fois au début et à la fin du conteneur. Cela signifie que vous pouvez ajouter ou supprimer des éléments à la fois à l'avant (`push_front`, `pop_front`) et à l'arrière (`push_back`, `pop_back`) de la deque en temps constant.
+
+2. **Accès aléatoire** : `std::deque` supporte l'accès aléatoire aux éléments. Cela signifie que vous pouvez accéder à n'importe quel élément de la deque en utilisant l'opérateur d'indexation `[]` en temps constant.
+
+3. **Allocation dynamique de la mémoire** : `std::deque` alloue dynamiquement la mémoire à mesure que des éléments sont ajoutés ou supprimés. Contrairement à `std::vector`, qui doit parfois réallouer toute sa mémoire pour grandir, `std::deque` grandit de manière plus efficace en allouant de petits blocs de mémoire à la fois.
+
+4. **Pas de réserve de capacité** : Contrairement à `std::vector`, `std::deque` ne fournit pas de fonction `reserve` pour pré-allouer de la mémoire. C'est parce que `std::deque` n'a pas besoin de réallouer toute sa mémoire lorsqu'il grandit.
+
+Voici un exemple d'utilisation de `std::deque` :
+
+```cpp
+#include <iostream>
+#include <deque>
+
+int main() {
+    std::deque<int> d;
+
+    d.push_back(1);    // Ajoute 1 à la fin
+    d.push_front(2);   // Ajoute 2 au début
+    d.push_back(3);    // Ajoute 3 à la fin
+
+    // Affiche tous les éléments de la deque
+    for(int i = 0; i < d.size(); i++)
+        std::cout << d[i] << ' ';
+
+    return 0;
+}
+```
+
+Ce programme affichera "2 1 3", qui sont les éléments de la deque dans l'ordre.
 // typename T::const_iterator it = std::find(container.begin(), container.end(), value);
 // int i = find(0, n, 5)
 
@@ -662,3 +693,34 @@ int main() {
 	
 - red black tree:
 	- binary search in map and set
+
+**********************************MODULE_09************************************
+
+
+Voici la formule :
+
+- Jacobsthal(0) = 0
+- Jacobsthal(1) = 1
+- Jacobsthal(n) = 2 * Jacobsthal(n-1) + Jacobsthal(n-2) pour n > 1
+
+Donc, les premiers nombres de Jacobsthal sont : 0, 1, 1, 3, 5, 11, 21, 43, 85, 171, ...
+
+La fonction `generateJacobsthalNumbers` générerait probablement une séquence de nombres de Jacobsthal jusqu'à un certain point. Voici une simple implémentation en C++ :
+
+```cpp
+#include <vector>
+
+std::vector<int> generateJacobsthalNumbers(int n) {
+    std::vector<int> jacobsthal(n);
+    jacobsthal[0] = 0;
+    jacobsthal[1] = 1;
+
+    for(int i = 2; i < n; i++) {
+        jacobsthal[i] = 2 * jacobsthal[i-1] + jacobsthal[i-2];
+    }
+
+    return jacobsthal;
+}
+```
+
+Cette fonction génère les `n` premiers nombres de Jacobsthal et les renvoie dans un vecteur.

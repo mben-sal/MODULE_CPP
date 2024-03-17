@@ -5,29 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 10:58:10 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/14 20:45:12 by mben-sal         ###   ########.fr       */
+/*   Created: 2024/03/16 13:34:38 by mben-sal          #+#    #+#             */
+/*   Updated: 2024/03/16 20:42:44 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Span.hpp"
+#include "BitcoinExchange.hpp"
 
-int main()
+int main (int ac , char **av)
 {
-	try {
-		Span sp = Span(5);
-		sp.addNumber(2);
-		sp.addNumber(3);
-		sp.addNumber(17);
-		sp.addNumber(9);
-		// sp.addNumber(11);
-		sp.addNumber(12);
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+	if(ac != 2)
+	{
+		std::cerr << "erreur input file  " << av[0] << std::endl;
+		return (1);
 	}
-	catch(const std::exception& e) {
-		std::cerr << e.what() << '\n';
+	std::map<std::string, float> container;
+	std::string csv = "data.csv";
+	std::string file = av[1];
+	try
+	{
+		read_map(container, csv);
+		read_input(file, container);
 	}
-
-	return 0;
+	catch(const std::runtime_error& e)
+	{
+		std::cerr << "erreur execute " << e.what() << '\n';
+	}
+	
 }

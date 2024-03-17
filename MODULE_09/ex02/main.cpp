@@ -5,29 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/09 10:58:10 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/14 20:45:12 by mben-sal         ###   ########.fr       */
+/*   Created: 2024/03/17 12:34:19 by mben-sal          #+#    #+#             */
+/*   Updated: 2024/03/17 21:56:24 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./Span.hpp"
+#include "PmergeMe.hpp"
 
-int main()
+int main(int ac, char **av)
 {
-	try {
-		Span sp = Span(5);
-		sp.addNumber(2);
-		sp.addNumber(3);
-		sp.addNumber(17);
-		sp.addNumber(9);
-		// sp.addNumber(11);
-		sp.addNumber(12);
-		std::cout << sp.shortestSpan() << std::endl;
-		std::cout << sp.longestSpan() << std::endl;
+	std::string str;
+	PmergeMe obj;
+	std::string input;
+	if(ac <= 1)
+	{
+		std::cerr << "erreur input entrez une liste de nombres" << std::endl;
 	}
-	catch(const std::exception& e) {
+	for (int i = 1; i < ac; i++)
+	{
+		str += av[i];
+		if (i < ac - 1)
+			str += " ";
+	}
+	input = str;
+	try
+	{
+		obj.input(input);
+		obj.FJohnson_deque();
+		obj.FJohnson_vector();
+	}
+	catch(const std::runtime_error& e)
+	{
 		std::cerr << e.what() << '\n';
 	}
-
-	return 0;
 }

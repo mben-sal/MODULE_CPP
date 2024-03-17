@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:11:15 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/09 15:31:17 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/15 18:05:38 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,12 @@ int main()
 		i++;
 	}
 	std::stack<int> s(mstack);
+	/*************************************/
+	// MutantStack<int> s(mstack);
+	// s.add(900);
+	// MutantStack<int>::iterator m = s.begin();
+	// std::cout << "*it = ";
+	// std::cout << m[5] << std::endl;
 
 	return 0;
 }
-
