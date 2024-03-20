@@ -6,19 +6,19 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:11:15 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/15 18:05:38 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/20 20:34:28 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./MutantStack.hpp"
 
 int main()
-{	
+{
 	MutantStack<int> mstack;
 
 	mstack.push(5);
 	mstack.push(17);
-	
+
 	std::cout << "mstack.top() = ";
 	std::cout << mstack.top() << std::endl;
 
@@ -33,7 +33,7 @@ int main()
 
 	//[...]
 
-	mstack.push(0);
+	mstack.push(10);
 
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
@@ -49,12 +49,7 @@ int main()
 		i++;
 	}
 	std::stack<int> s(mstack);
-	/*************************************/
-	// MutantStack<int> s(mstack);
-	// s.add(900);
-	// MutantStack<int>::iterator m = s.begin();
-	// std::cout << "*it = ";
-	// std::cout << m[5] << std::endl;
 
 	return 0;
 }
+

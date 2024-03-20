@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 12:10:17 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/15 18:04:36 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/20 20:01:43 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,31 +17,23 @@
 # include <stack>
 # include <iterator>
 
-template <class Type, class Container = std::deque<Type> >
-class MutantStack : public std::stack<Type, Container>
+template < typename T>
+class MutantStack : public std::stack<T>
 {
-	private:
-	public:
-		MutantStack() : std::stack<Type, Container>() {};
+	private :
+		std::stack<T>  stack_;
+	public :
+		MutantStack() {};
 		~MutantStack() {};
-		MutantStack & operator = (const MutantStack & rhs)
+		typedef typename  std::deque<T>::iterator iterator;
+		MutantStack& operator=(const MutantStack& other)
 		{
-			if (this == &rhs )
-				return (*this);
-			this->c = rhs.c;
+			if (this != &other)
+				this->c = other.c;
 			return (*this);
 		}
-		typedef typename std::stack<Type, Container>::container_type::iterator iterator;
-		iterator begin() {
-			return this->c.begin();
-		}
-		iterator end() {
-			return this->c.end();
-		}
-		// void add(Type value)
-		// {
-		// 	this->c.push_back(value);
-		// }
+		iterator	begin(void) {return this->c.begin();}
+		iterator	end(void){return this->c.end();}
 };
 
 #endif

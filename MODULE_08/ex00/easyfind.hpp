@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 10:37:44 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/14 18:18:16 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/19 19:54:46 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ bool easyfind(const T& container, int value)
         std::cout << "\nThe first occurrence of " << value << " found\n";
         return true;
     }
-
     std::cout << "\nElement " << value << " not found\n";
     return false;
 }

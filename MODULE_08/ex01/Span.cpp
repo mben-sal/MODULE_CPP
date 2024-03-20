@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 11:02:46 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/14 20:58:38 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/20 18:01:43 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,39 @@ void Span::addNumber(unsigned int num)
 		throw NoSpaceLeft();
 }
 
-unsigned int		Span::shortestSpan() const {
-	if (this->_vec.size() <= 1)
-		throw NoSpan();
-	else
+unsigned int  Span::shortestSpan() const
+{
+	if (this->_vec.size() < 2)
+		throw std::runtime_error("No span can be found. Insufficient data.");
+	int shortestSpan = std::numeric_limits<int>::max();
+	for (size_t i = 0; i < this->_vec.size() - 1; ++i)
 	{
-		std::vector<int>::const_iterator it = min_element(this->_vec.begin(), this->_vec.end());
-		return (*it);
+		for (size_t j = i + 1 ; j < this->_vec.size() ; ++j)
+		{
+			int span = std::abs(this->_vec[j] - this->_vec[i]);
+			if (span < shortestSpan)
+				shortestSpan = span;
+		}
 	}
-	// return (*std::min_element(this->_vec.begin(), this->_vec.end()));
+	return (shortestSpan);
 }
 
 
-unsigned int	Span::longestSpan() const {
-	if (this->_vec.size() <= 1)
-		throw Span::NoSpan();
-	else
-		return (*std::max_element(this->_vec.begin(), this->_vec.end()));
+unsigned int  Span::longestSpan() const
+{
+	if (this->_vec.size() < 2)
+		throw std::runtime_error("No span can be found. Insufficient data.");
+	int longestSpan = std::numeric_limits<int>::min();
+	for (size_t i = 0; i < this->_vec.size() - 1; ++i)
+	{
+		for (size_t j = i + 1 ; j < this->_vec.size(); ++j)
+		{
+			int span = std::abs(this->_vec[j] - this->_vec[i]);
+			if (span > longestSpan)
+				longestSpan = span;
+		}	
+	}
+	return (longestSpan);
 }
 
 const char* Span::NoSpan::what() const throw()
