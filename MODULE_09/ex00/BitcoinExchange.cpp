@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 13:35:02 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/16 20:44:02 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/23 15:01:43 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void read_input(const std::string& file, std::map<std::string, float>&container)
 			}
 			if(!checkvaleur(checkligne(value)))
 			{
-				std::cerr << "Error: bad input => " + ligne << std::endl;
 				continue;
 			}
 			closes_liee(container, checkligne(date), checkligne(value));
@@ -110,17 +109,30 @@ bool checkvaleur(const std::string &valeur)
 	int flag = 0;
 	for(size_t i = 0; i < valeur.length(); i++)
 	{
-		if(valeur[i] == '.')
+		if(valeur[i] == '.' || valeur[i] == '-')
 			flag++;
 	}
 	for (size_t i = 0; i < valeur.length(); i++)
 	{
+		if(valeur[i] == '-')
+			i++;
 		if(!isdigit(valeur[i]) && flag != 1)
 			return 0;
 	}
 	float val = atof(valeur.c_str());
 	if(val <= 0 || val >= 1000)
-		return 0;
+	{
+		if (val <= 0)
+		{
+			std::cerr << "Error: not a positive number." << std::endl;
+			return 0;
+		}
+		else if (val > 1000)
+		{
+			std::cerr << "Error: too large a number." << std::endl;
+			return 0;
+		}
+	}
 	return 1;
 }
 bool checkdate( const std::string &date )

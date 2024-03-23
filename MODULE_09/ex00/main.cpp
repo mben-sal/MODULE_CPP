@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 13:34:38 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/16 20:42:44 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/23 13:54:22 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main (int ac , char **av)
 {
 	if(ac != 2)
 	{
-		std::cerr << "erreur input file  " << av[0] << std::endl;
+		std::cerr << "Error: could not open file." << std::endl;
 		return (1);
 	}
 	std::map<std::string, float> container;

@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 13:15:32 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/17 21:53:09 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/23 21:50:29 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -152,7 +152,7 @@ void PmergeMe::FJohnson_deque()
 	this->time = gettime();
 	if(this->deque.size() % 2 == 1)
 	{
-		for(size_t i = 0; i < this->vector.size(); i += 2)
+		for(size_t i = 0; i < this->vector.size() - 1; i += 2)
 		{
 			deque_pairs.push_back(std::make_pair(this->deque[i], this->deque[i + 1]));
 		}
@@ -165,9 +165,9 @@ void PmergeMe::FJohnson_deque()
 			deque_pairs.push_back(std::make_pair(this->deque[i], this->deque[i + 1]));
 		}
 	}
-	for(size_t i = 0 ; i < deque_pairs.size(); i++)
+	for(size_t i = 0 ; i < deque_pairs.size(); i++) 
 	{
-		if(deque_pairs[i].first > deque_pairs[i].second)
+		if(deque_pairs[i].first < deque_pairs[i].second)
 		{
 			std::swap(deque_pairs[i].first, deque_pairs[i].second);
 		}
@@ -182,27 +182,28 @@ void PmergeMe::FJohnson_deque()
 	{
 		dq_pend.push_back(it->second);
 	}
-	// std::deque<int> comparaison_index = combaraison_deq(this->dq_J_Numbers);
-	// for(std::deque<int>::iterator it = comparaison_index.begin(); it != comparaison_index.end() && !dq_pend.empty(); it++)
-	// {
-	// 	if ((*it -1) < (int)dq_pend.size())
-	// 	{
-	// 		if (std::find(dq_chain.begin(), dq_chain.end(), dq_pend[*it - 1]) != dq_chain.end())
-	// 			continue;
-	// 		binary_search_dq(dq_pend[*it - 1], dq_chain);
-	// 	}
-	// }
-	// if (!dq_pend.empty())
-	// {
-	// 	for (size_t i = 0 ; i < dq_pend.size() ; i++)
-	// 	{
-	// 		if (!dq_pend.empty() && std::find(dq_chain.begin(), dq_chain.end(), dq_pend[i]) != dq_chain.end())
-	// 			continue;
-	// 		binary_search_dq(dq_pend[i], dq_chain);
-	// 	}
-	// }
-	// if (deque.size() % 2 == 1)
-	// 	binary_search_dq(this->rest_num_dq, dq_chain);
+	g_Jacobsthal_N(deque.size());
+	std::deque<int> comparaison_index = combaraison_deq(this->dq_J_Numbers);
+	for(std::deque<int>::iterator it = comparaison_index.begin(); it != comparaison_index.end() && !dq_pend.empty(); ++it)
+	{
+		if ((*it - 1) < (int)dq_pend.size())
+		{
+			if (std::find(dq_chain.begin(), dq_chain.end(), dq_pend[*it - 1]) != dq_chain.end())
+				continue;
+			binary_search_dq(dq_pend[*it - 1], dq_chain);
+		}
+	}
+	if (!dq_pend.empty())
+	{
+		for (size_t i = 0 ; i < dq_pend.size() ; i++)
+		{
+			if (!dq_pend.empty() && std::find(dq_chain.begin(), dq_chain.end(), dq_pend[i]) != dq_chain.end())
+				continue;
+			binary_search_dq(dq_pend[i], dq_chain);
+		}
+	}
+	if (deque.size() % 2 == 1)
+		binary_search_dq(this->rest_num_dq, dq_chain);
 	this->time_process_dq = ((gettime() -  this->time) / 1000000.0);// comtunier partie  *binary_search_dq et vec et FJohnson_vector
 }
 
@@ -242,6 +243,13 @@ void PmergeMe::FJohnson_vector()
 			vector_pairs.push_back(std::make_pair(vector[i], vector[i + 1]));
 		}
 	}
+	for(size_t i = 0 ; i < vector_pairs.size(); ++i) 
+	{
+		if(vector_pairs[i].first < vector_pairs[i].second)
+		{
+			std::swap(vector_pairs[i].first, vector_pairs[i].second);
+		}
+	}
 	std::sort(vector_pairs.begin(), vector_pairs.end());
 	ve_chain.push_back(vector_pairs[0].second);
 	for(size_t i = 0 ; i < vector_pairs.size(); i++)
@@ -252,7 +260,7 @@ void PmergeMe::FJohnson_vector()
 	{
 		ve_pend.push_back(it->second);
 	}
-	g_Jacobsthal_N(ve_pend.size());
+	g_Jacobsthal_N(vector.size());
 	std::vector<int> comparaison_index = combaraison_vec(this->ve_J_Numbers, ve_pend.size());
 	for(std::vector<int>::iterator it = comparaison_index.begin(); it != comparaison_index.end() && !ve_pend.empty(); ++it)
 	{
@@ -280,18 +288,18 @@ void PmergeMe::FJohnson_vector()
 
 void PmergeMe::print_liste(std::vector<int> &main_chain)
 {
-	std::cout << "avant :";
+	std::cout << "before :";
 	for(std::vector<int>::iterator it = vector.begin() ; it != vector.end(); it++)
 	{
 		std::cout << " " << *it << " ";
 	}
 	std::cout << std::endl;
-	std::cout << "apres :";
+	std::cout << "after :";
 	for(std::vector<int>::iterator it = main_chain.begin() ; it != main_chain.end(); it++)
 	{
 		std::cout << " " << *it << " ";
 	}
 	std::cout << std::endl;
-	std::cout << "temps de processus vector : " << this->time_process_ve << "us" << std::endl;
-	std::cout << "temps de processus deque  : " << this->time_process_dq << "us" << std::endl;
+	std::cout << "Time to process a range of " << this->deque.size() << " elements with std::deque<int> :" << this->time_process_dq << " us"<< std::endl; 
+	std::cout << "Time to process a range of " << this->vector.size() << " elements with std::vector<int> :" << this->time_process_ve << " us"<< std::endl;
 }

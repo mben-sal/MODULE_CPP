@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RPN.CPP                                            :+:      :+:    :+:   */
+/*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 16:54:32 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/18 17:48:36 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/23 15:48:30 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void check_number(int ac, char **av)
 			i++;
 		if (!isdigit(av[1][i]) && av[1][i] != '/' && av[1][i] != '*' && av[1][i] != '+' && av[1][i] != '-')
 		{
-			std::cout << "Error !" << std::endl;
+			std::cout << " 1 - Error !" << std::endl;
 			exit(0);
 		}
 	}
@@ -39,7 +39,7 @@ void execute(std::stack<double> *s, char c)
 		{
 			if (!nb_tmp1)
 			{
-				std::cout << "Error: !" << std::endl;
+				std::cout << " 2 - Error: !" << std::endl;
 				exit(0);
 			}
 			s->push(nb_tmp2 / nb_tmp1);
