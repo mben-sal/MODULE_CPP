@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/09 11:02:46 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/20 18:01:43 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/21 17:07:05 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ unsigned int  Span::shortestSpan() const
 	}
 	return (shortestSpan);
 }
-
 
 unsigned int  Span::longestSpan() const
 {

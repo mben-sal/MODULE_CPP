@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 12:34:19 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/23 16:40:53 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/24 22:06:45 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int main(int ac, char **av)
 {
 	std::string str;
 	PmergeMe obj;
-	std::string input;
 	if(ac <= 1)
 	{
 		std::cerr << "erreur input entrez une liste de nombres" << std::endl;
+		exit(0);
 	}
 	for (int i = 1; i < ac; i++)
 	{
@@ -27,10 +27,9 @@ int main(int ac, char **av)
 		if (i < ac - 1)
 			str += " ";
 	}
-	input = str;
 	try
 	{
-		obj.input(input);
+		obj.input(str);
 		obj.FJohnson_deque();
 		obj.FJohnson_vector();
 	}

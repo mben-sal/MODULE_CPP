@@ -6,7 +6,7 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/17 13:15:32 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/23 21:50:29 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/24 22:13:04 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,18 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& other)
 
 void number_dub(std::vector<int> &vector)
 {
-	if(vector.size() <= 1)
-		throw std::runtime_error("Error: sort 1 number");
-	for (size_t i = 0 ; i < vector.size(); i++)
-	{
-		for (size_t j = (i + 1) ; j < vector.size(); j++)
-		{
-			if(vector[i] == vector[j])
-				throw std::runtime_error("Error: dub number");
-		}
-	}
+    if (vector.size() <= 1)
+        throw std::runtime_error("Error: sort 1 number");
+
+    std::set<int> seen; // Ensemble pour stocker les nombres déjà vus
+
+    for (size_t i = 0; i < vector.size(); i++)
+    {
+        if (seen.find(vector[i]) != seen.end()) // Vérifier si le nombre est déjà dans l'ensemble
+            throw std::runtime_error("Error: dub number");
+
+        seen.insert(vector[i]); // Ajouter le nombre à l'ensemble
+    }
 }
 
 long long PmergeMe::gettime()
@@ -67,11 +69,12 @@ void PmergeMe::input(std::string &input)
 	std::istringstream ss(input);
 	std::string	v_input;
 	int number;
+	std::string::iterator it;
 
 	while (ss >> v_input)
 	{
 		if(v_input.find_first_not_of("0123456789") != std::string::npos)
-			throw std::runtime_error("Error: entrez une liste de nombres");
+			throw std::runtime_error("Error : invalid input");
 		number = std::atoi(v_input.c_str());
 		if(number  >= 0)
 		{
@@ -80,9 +83,7 @@ void PmergeMe::input(std::string &input)
 		}
 		else
 			throw std::runtime_error("Error: invalid input");
-		
 	}
-	number_dub(this->vector);
 }
 
 void binary_search(int value, std::vector<int> &ve_chain)
@@ -149,7 +150,7 @@ void PmergeMe::FJohnson_deque()
 {
 	std::deque<int> dq_chain;
 	std::deque<int> dq_pend;
-	this->time = gettime();
+	clock_t start = std::clock();
 	if(this->deque.size() % 2 == 1)
 	{
 		for(size_t i = 0; i < this->vector.size() - 1; i += 2)
@@ -204,7 +205,8 @@ void PmergeMe::FJohnson_deque()
 	}
 	if (deque.size() % 2 == 1)
 		binary_search_dq(this->rest_num_dq, dq_chain);
-	this->time_process_dq = ((gettime() -  this->time) / 1000000.0);// comtunier partie  *binary_search_dq et vec et FJohnson_vector
+	clock_t end = std::clock();
+	this->time_process_dq = double(end - start) / CLOCKS_PER_SEC * 1e6;
 }
 
 void PmergeMe::g_Jacobsthal_N(int size)
@@ -227,7 +229,7 @@ void PmergeMe::FJohnson_vector()
 {
 	std::vector<int> ve_chain;
 	std::vector<int> ve_pend;
-	this->time = gettime();
+	clock_t start = std::clock();
 	if(vector.size() % 2 == 1)
 	{
 		for(size_t i = 0; i < vector.size() - 1; i += 2)
@@ -282,7 +284,8 @@ void PmergeMe::FJohnson_vector()
 	}
 	if (vector.size() % 2 == 1)
 		binary_search(this->rest_num_ve, ve_chain);
-	this->time_process_ve = ((gettime() -  this->time) / 1000000.0);
+	clock_t end = std::clock();
+	this->time_process_ve = double(end - start) / CLOCKS_PER_SEC * 1e6 ;
 	print_liste(ve_chain);
 }
 

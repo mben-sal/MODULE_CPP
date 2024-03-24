@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/mben-sal/Desktop/MODULE_CPP/MODULE_09/ex00",
-      "program": "/Users/mben-sal/Desktop/MODULE_CPP/MODULE_09/ex00/build/Debug/outDebug"
+      "cwd": "/Users/mben-sal/Desktop/mm/ex01",
+      "program": "/Users/mben-sal/Desktop/mm/ex01/build/Debug/outDebug"
     }
   ]
 }

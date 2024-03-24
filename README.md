@@ -696,6 +696,7 @@ int main() {
 
 **********************************MODULE_09************************************
 
+merge-insertion sort: https://www.tldraw.com/v/y9Y2Et7vl18fkPZT4UoEKTW?v=532,569,1378,2638&p=jEhR30akJPWN_ZhTL5KgI
 
 Voici la formule :
 

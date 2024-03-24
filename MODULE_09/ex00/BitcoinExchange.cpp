@@ -6,13 +6,13 @@
 /*   By: mben-sal <mben-sal@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/16 13:35:02 by mben-sal          #+#    #+#             */
-/*   Updated: 2024/03/23 15:01:43 by mben-sal         ###   ########.fr       */
+/*   Updated: 2024/03/24 21:58:07 by mben-sal         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-void read_map(std::map<std::string, float>& container, const std::string& filename)
+void read_map(std::map<std::string, float> &container, const std::string &filename)
 {
 	std::string ligne;
 	std::ifstream exchangefile(filename);
@@ -30,42 +30,42 @@ void read_map(std::map<std::string, float>& container, const std::string& filena
 	}
 	exchangefile.close();
 }
-void read_input(const std::string& file, std::map<std::string, float>&container)
+void read_input(const std::string &file, std::map<std::string, float> &container)
 {
 	std::ifstream inputfile(file);
 	std::string ligne;
 
-	if(!inputfile)
+	if (!inputfile)
 		throw std::runtime_error("file input not found");
 	std::getline(inputfile, ligne);
-	if(checkligne(ligne) != "date | value" || ligne.empty())
+	if (checkligne(ligne) != "date | value" || ligne.empty())
 		throw std::runtime_error("Error: bad input file");
-	while(std::getline(inputfile, ligne))
+	while (std::getline(inputfile, ligne))
 	{
-		std::istringstream mm (ligne);
+		std::istringstream mm(ligne);
 		std::string date;
 		std::string value;
-		if(std::getline(mm, date, '|') && std::getline(mm, value) && !ligne.empty())
+		if (std::getline(mm, date, '|') && std::getline(mm, value) && !ligne.empty())
 		{
-			if(ligne.find_first_not_of('\n') == std::string::npos)
+			if (ligne.find_first_not_of('\n') == std::string::npos)
 				continue;
-			if(!checkdate(checkligne(date)))
+			if (!checkdate(checkligne(date)))
 			{
 				std::cerr << "Error: bad input => " + ligne << std::endl;
 				continue;
 			}
-			if(!checkvaleur(checkligne(value)))
+			if (!checkvaleur(checkligne(value)))
 			{
 				continue;
 			}
 			closes_liee(container, checkligne(date), checkligne(value));
 		}
-		if(!ligne.empty() && value.empty())
+		if (!ligne.empty() && value.empty())
 		{
 			std::cerr << "Error: bad input => " + checkligne(date) << std::endl;
 			continue;
 		}
-		if(!ligne.empty() && date.empty())
+		if (!ligne.empty() && date.empty())
 		{
 			std::cerr << "Error: bad input => " + checkligne(value) << std::endl;
 			continue;
@@ -74,7 +74,7 @@ void read_input(const std::string& file, std::map<std::string, float>&container)
 	inputfile.close();
 }
 
-void closes_liee(std::map<std::string, float>& container, const std::string& date, const std::string& value)
+void closes_liee(std::map<std::string, float> &container, const std::string &date, const std::string &value)
 {
 	std::map<std::string, float>::iterator it = container.lower_bound(date);
 	if (it == container.end())
@@ -107,20 +107,23 @@ std::string checkligne(std::string &str)
 bool checkvaleur(const std::string &valeur)
 {
 	int flag = 0;
-	for(size_t i = 0; i < valeur.length(); i++)
+	for (size_t i = 0; i < valeur.length(); i++)
 	{
-		if(valeur[i] == '.' || valeur[i] == '-')
+		if (valeur[i] == '.' || valeur[i] == '-')
 			flag++;
 	}
 	for (size_t i = 0; i < valeur.length(); i++)
 	{
-		if(valeur[i] == '-')
+		if (valeur[i] == '-')
 			i++;
-		if(!isdigit(valeur[i]) && flag != 1)
+		if (!isdigit(valeur[i]) && flag != 1)
+		{
+			std::cerr << "Error: not a positive number." << std::endl;
 			return 0;
+		}
 	}
 	float val = atof(valeur.c_str());
-	if(val <= 0 || val >= 1000)
+	if (val <= 0 || val >= 1000)
 	{
 		if (val <= 0)
 		{
@@ -135,26 +138,26 @@ bool checkvaleur(const std::string &valeur)
 	}
 	return 1;
 }
-bool checkdate( const std::string &date )
+bool checkdate(const std::string &date)
 {
 	if (date.length() != 10)
 		return 0;
-	if(date[4] != '-' || date[7] != '-')
+	if (date[4] != '-' || date[7] != '-')
 		return 0;
-	std::string année = date.substr(0,4);
-	std::string mois  = date.substr(5,2);
-	std::string jour = date.substr(8,2);
-	for(size_t i = 0; i < année.length(); i++)
+	std::string année = date.substr(0, 4);
+	std::string mois = date.substr(5, 2);
+	std::string jour = date.substr(8, 2);
+	for (size_t i = 0; i < année.length(); i++)
 	{
 		if (!isdigit(année[i]))
 			return 0;
 	}
-	for(size_t i = 0; i < mois.length(); i++)
+	for (size_t i = 0; i < mois.length(); i++)
 	{
 		if (!isdigit(mois[i]))
 			return 0;
 	}
-	for(size_t i = 0; i < jour.length(); i++)
+	for (size_t i = 0; i < jour.length(); i++)
 	{
 		if (!isdigit(jour[i]))
 			return 0;
@@ -162,18 +165,18 @@ bool checkdate( const std::string &date )
 	int année_int = atoi(année.c_str());
 	int mois_int = atoi(mois.c_str());
 	int jour_int = atoi(jour.c_str());
-	if(année_int < 2008 || année_int > 2022 || mois_int < 1 || mois_int > 12 || jour_int < 1 || jour_int > 31)
+	if (année_int < 2008 || année_int > 2022 || mois_int < 1 || mois_int > 12 || jour_int < 1 || jour_int > 31)
 		return 0;
-	if((mois_int == 4 || mois_int == 6 || mois_int == 9 || mois_int == 11) && (jour_int > 30))
+	if ((mois_int == 4 || mois_int == 6 || mois_int == 9 || mois_int == 11) && (jour_int > 30))
 		return 0;
-	if(mois_int == 2)
+	if (mois_int == 2)
 	{
 		int exep = (année_int % 4 == 0);
 		int max = 28;
 		if (exep)
 			max = 29;
-		if(jour_int > max)
+		if (jour_int > max)
 			return 0;
 	}
-	return 1;	
+	return 1;
 }
